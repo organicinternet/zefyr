@@ -148,6 +148,63 @@ class _ZefyrLineState extends State<ZefyrLine> {
     if (style.containsSame(NotusAttribute.underline)) {
       result = result.merge(theme.attributeTheme.underline);
     }
+    if (style.containsSame(NotusAttribute.span.fontQl1)) {
+      result = result.merge(theme.attributeTheme.fontQl1);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl2)) {
+      result = result.merge(theme.attributeTheme.fontQl2);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl3)) {
+      result = result.merge(theme.attributeTheme.fontQl3);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl4)) {
+      result = result.merge(theme.attributeTheme.fontQl4);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl5)) {
+      result = result.merge(theme.attributeTheme.fontQl5);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl6)) {
+      result = result.merge(theme.attributeTheme.fontQl6);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl7)) {
+      result = result.merge(theme.attributeTheme.fontQl7);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl8)) {
+      result = result.merge(theme.attributeTheme.fontQl8);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl9)) {
+      result = result.merge(theme.attributeTheme.fontQl9);
+    }
+    if (style.containsSame(NotusAttribute.span.fontQl10)) {
+      result = result.merge(theme.attributeTheme.fontQl10);
+    }
+    if (style.containsSame(NotusAttribute.div.lightHeading1)) {
+      result =
+          result.merge(theme.attributeTheme.screedStyleLightHeading1.textStyle);
+    }
+    if (style.containsSame(NotusAttribute.div.lightHeading2)) {
+      result =
+          result.merge(theme.attributeTheme.screedStyleLightHeading2.textStyle);
+    }
+    if (style.containsSame(NotusAttribute.div.lightHeading3)) {
+      result =
+          result.merge(theme.attributeTheme.screedStyleLightHeading3.textStyle);
+    }
+    if (style.containsSame(NotusAttribute.div.body1)) {
+      result = result.merge(theme.attributeTheme.screedStyleBody1.textStyle);
+    }
+    if (style.containsSame(NotusAttribute.div.body2)) {
+      result = result.merge(theme.attributeTheme.screedStyleBody2.textStyle);
+    }
+    if (style.containsSame(NotusAttribute.div.body3)) {
+      result = result.merge(theme.attributeTheme.screedStyleBody3.textStyle);
+    }
+    if (style.containsSame(NotusAttribute.div.body4)) {
+      result = result.merge(theme.attributeTheme.screedStyleBody4.textStyle);
+    }
+    if (style.containsSame(NotusAttribute.div.listed)) {
+      result = result.merge(theme.attributeTheme.screedStyleListed.textStyle);
+    }
     if (style.contains(NotusAttribute.link)) {
       result = result.merge(theme.attributeTheme.link);
     }

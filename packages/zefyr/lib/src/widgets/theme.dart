@@ -293,6 +293,28 @@ class AttributeTheme {
   /// Style used to render text containing links.
   final TextStyle link;
 
+  final TextStyle fontQl1;
+  final TextStyle fontQl2;
+  final TextStyle fontQl3;
+  final TextStyle fontQl4;
+  final TextStyle fontQl5;
+  final TextStyle fontQl6;
+  final TextStyle fontQl7;
+  final TextStyle fontQl8;
+  final TextStyle fontQl9;
+  final TextStyle fontQl10;
+
+  final LineTheme screedStyleLightHeading1;
+  final LineTheme screedStyleLightHeading2;
+  final LineTheme screedStyleLightHeading3;
+
+  final LineTheme screedStyleBody1;
+  final LineTheme screedStyleBody2;
+  final LineTheme screedStyleBody3;
+  final LineTheme screedStyleBody4;
+
+  final LineTheme screedStyleListed;
+
   /// Style theme used to render largest headings.
   final LineTheme heading1;
 
@@ -327,6 +349,24 @@ class AttributeTheme {
     this.numberList,
     this.quote,
     this.code,
+    this.fontQl1,
+    this.fontQl2,
+    this.fontQl3,
+    this.fontQl4,
+    this.fontQl5,
+    this.fontQl6,
+    this.fontQl7,
+    this.fontQl8,
+    this.fontQl9,
+    this.fontQl10,
+    this.screedStyleLightHeading1,
+    this.screedStyleLightHeading2,
+    this.screedStyleLightHeading3,
+    this.screedStyleBody1,
+    this.screedStyleBody2,
+    this.screedStyleBody3,
+    this.screedStyleBody4,
+    this.screedStyleListed,
   });
 
   /// The default attribute theme.
@@ -409,6 +449,88 @@ class AttributeTheme {
         inheritLineTextStyle: false,
         linePadding: EdgeInsets.zero,
       ),
+      fontQl1: TextStyle(fontSize: 16.0),
+      fontQl2: TextStyle(fontSize: 18.0),
+      fontQl3: TextStyle(fontSize: 20.0),
+      fontQl4: TextStyle(fontSize: 22.0),
+      fontQl5: TextStyle(fontSize: 24.0),
+      fontQl6: TextStyle(fontSize: 26.0),
+      fontQl7: TextStyle(fontSize: 28.0),
+      fontQl8: TextStyle(fontSize: 38.0),
+      fontQl9: TextStyle(fontSize: 48.0),
+      fontQl10: TextStyle(fontSize: 72.0),
+      screedStyleLightHeading1: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 34.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 16.0),
+      ),
+      screedStyleLightHeading2: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 24.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 16.0),
+      ),
+      screedStyleLightHeading3: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 20.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 8.0),
+      ),
+      screedStyleBody1: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 14.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 8.0),
+      ),
+      screedStyleBody2: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 16.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 8.0),
+      ),
+      screedStyleBody3: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 18.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 8.0),
+      ),
+      screedStyleBody4: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 20.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 8.0),
+      ),
+      screedStyleListed: LineTheme(
+        textStyle: defaultLineTheme.textStyle.copyWith(
+          fontSize: 14.0,
+          color: defaultLineTheme.textStyle.color.withOpacity(0.7),
+          height: 1.15,
+          fontWeight: FontWeight.normal,
+        ),
+        padding: EdgeInsets.only(top: 0.0),
+      ),
     );
   }
 
@@ -426,6 +548,24 @@ class AttributeTheme {
     BlockTheme numberList,
     BlockTheme quote,
     BlockTheme code,
+    TextStyle fontQl1,
+    TextStyle fontQl2,
+    TextStyle fontQl3,
+    TextStyle fontQl4,
+    TextStyle fontQl5,
+    TextStyle fontQl6,
+    TextStyle fontQl7,
+    TextStyle fontQl8,
+    TextStyle fontQl9,
+    TextStyle fontQl10,
+    LineTheme screedStyleLightHeading1,
+    LineTheme screedStyleLightHeading2,
+    LineTheme screedStyleLightHeading3,
+    LineTheme screedStyleBody1,
+    LineTheme screedStyleBody2,
+    LineTheme screedStyleBody3,
+    LineTheme screedStyleBody4,
+    LineTheme screedStyleListed,
   }) {
     return AttributeTheme(
       bold: bold ?? this.bold,
@@ -439,6 +579,27 @@ class AttributeTheme {
       numberList: numberList ?? this.numberList,
       quote: quote ?? this.quote,
       code: code ?? this.code,
+      fontQl1: fontQl1 ?? this.fontQl1,
+      fontQl2: fontQl2 ?? this.fontQl2,
+      fontQl3: fontQl3 ?? this.fontQl3,
+      fontQl4: fontQl4 ?? this.fontQl4,
+      fontQl5: fontQl5 ?? this.fontQl5,
+      fontQl6: fontQl6 ?? this.fontQl6,
+      fontQl7: fontQl7 ?? this.fontQl7,
+      fontQl8: fontQl8 ?? this.fontQl8,
+      fontQl9: fontQl9 ?? this.fontQl9,
+      fontQl10: fontQl10 ?? this.fontQl10,
+      screedStyleLightHeading1:
+          screedStyleLightHeading1 ?? this.screedStyleLightHeading1,
+      screedStyleLightHeading2:
+          screedStyleLightHeading2 ?? this.screedStyleLightHeading2,
+      screedStyleLightHeading3:
+          screedStyleLightHeading3 ?? this.screedStyleLightHeading3,
+      screedStyleBody1: screedStyleBody1 ?? this.screedStyleBody1,
+      screedStyleBody2: screedStyleBody2 ?? this.screedStyleBody2,
+      screedStyleBody3: screedStyleBody3 ?? this.screedStyleBody3,
+      screedStyleBody4: screedStyleBody4 ?? this.screedStyleBody4,
+      screedStyleListed: screedStyleListed ?? this.screedStyleListed,
     );
   }
 
@@ -458,6 +619,35 @@ class AttributeTheme {
       numberList: numberList?.merge(other.numberList) ?? other.numberList,
       quote: quote?.merge(other.quote) ?? other.quote,
       code: code?.merge(other.code) ?? other.code,
+      fontQl1: fontQl1?.merge(other.fontQl1) ?? other.fontQl1,
+      fontQl2: fontQl2?.merge(other.fontQl2) ?? other.fontQl2,
+      fontQl3: fontQl3?.merge(other.fontQl3) ?? other.fontQl3,
+      fontQl4: fontQl4?.merge(other.fontQl4) ?? other.fontQl4,
+      fontQl5: fontQl5?.merge(other.fontQl5) ?? other.fontQl5,
+      fontQl6: fontQl6?.merge(other.fontQl6) ?? other.fontQl6,
+      fontQl7: fontQl7?.merge(other.fontQl7) ?? other.fontQl7,
+      fontQl8: fontQl8?.merge(other.fontQl8) ?? other.fontQl8,
+      fontQl9: fontQl9?.merge(other.fontQl9) ?? other.fontQl9,
+      fontQl10: fontQl10?.merge(other.fontQl10) ?? other.fontQl10,
+      screedStyleLightHeading1:
+          screedStyleLightHeading1?.merge(other.screedStyleLightHeading1) ??
+              other.screedStyleLightHeading1,
+      screedStyleLightHeading2:
+          screedStyleLightHeading2?.merge(other.screedStyleLightHeading2) ??
+              other.screedStyleLightHeading2,
+      screedStyleLightHeading3:
+          screedStyleLightHeading3?.merge(other.screedStyleLightHeading3) ??
+              other.screedStyleLightHeading3,
+      screedStyleBody1: screedStyleBody1?.merge(other.screedStyleBody1) ??
+          other.screedStyleBody1,
+      screedStyleBody2: screedStyleBody2?.merge(other.screedStyleBody2) ??
+          other.screedStyleBody2,
+      screedStyleBody3: screedStyleBody3?.merge(other.screedStyleBody3) ??
+          other.screedStyleBody3,
+      screedStyleBody4: screedStyleBody4?.merge(other.screedStyleBody4) ??
+          other.screedStyleBody4,
+      screedStyleListed: screedStyleListed?.merge(other.screedStyleListed) ??
+          other.screedStyleListed,
     );
   }
 
@@ -475,7 +665,25 @@ class AttributeTheme {
         (otherTheme.bulletList == bulletList) &&
         (otherTheme.numberList == numberList) &&
         (otherTheme.quote == quote) &&
-        (otherTheme.code == code);
+        (otherTheme.code == code) &&
+        (otherTheme.fontQl1 == fontQl1) &&
+        (otherTheme.fontQl2 == fontQl2) &&
+        (otherTheme.fontQl3 == fontQl3) &&
+        (otherTheme.fontQl4 == fontQl4) &&
+        (otherTheme.fontQl5 == fontQl5) &&
+        (otherTheme.fontQl6 == fontQl6) &&
+        (otherTheme.fontQl7 == fontQl7) &&
+        (otherTheme.fontQl8 == fontQl8) &&
+        (otherTheme.fontQl9 == fontQl9) &&
+        (otherTheme.fontQl10 == fontQl10) &&
+        (otherTheme.screedStyleLightHeading1 == screedStyleLightHeading1) &&
+        (otherTheme.screedStyleLightHeading2 == screedStyleLightHeading2) &&
+        (otherTheme.screedStyleLightHeading3 == screedStyleLightHeading3) &&
+        (otherTheme.screedStyleBody1 == screedStyleBody1) &&
+        (otherTheme.screedStyleBody2 == screedStyleBody2) &&
+        (otherTheme.screedStyleBody3 == screedStyleBody3) &&
+        (otherTheme.screedStyleBody4 == screedStyleBody4) &&
+        (otherTheme.screedStyleListed == screedStyleListed);
   }
 
   @override
@@ -491,6 +699,24 @@ class AttributeTheme {
       numberList,
       quote,
       code,
+      fontQl1,
+      fontQl2,
+      fontQl3,
+      fontQl4,
+      fontQl5,
+      fontQl6,
+      fontQl7,
+      fontQl8,
+      fontQl9,
+      fontQl10,
+      screedStyleLightHeading1,
+      screedStyleLightHeading2,
+      screedStyleLightHeading3,
+      screedStyleBody1,
+      screedStyleBody2,
+      screedStyleBody3,
+      screedStyleBody4,
+      screedStyleListed,
     ]);
   }
 }

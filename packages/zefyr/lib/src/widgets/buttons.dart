@@ -235,6 +235,106 @@ class _HeadingButtonState extends State<HeadingButton> {
   }
 }
 
+/// Controls ql styles.
+///
+/// When pressed, this button displays overlay toolbar with three
+/// buttons for each ql font option.
+class FontQlButton extends StatefulWidget {
+  const FontQlButton({Key key}) : super(key: key);
+
+  @override
+  _FontQlButtonState createState() => _FontQlButtonState();
+}
+
+class _FontQlButtonState extends State<FontQlButton> {
+  @override
+  Widget build(BuildContext context) {
+    final toolbar = ZefyrToolbar.of(context);
+    return toolbar.buildButton(
+      context,
+      ZefyrToolbarAction.fontQl,
+      onPressed: showOverlay,
+    );
+  }
+
+  void showOverlay() {
+    final toolbar = ZefyrToolbar.of(context);
+    toolbar.showOverlay(buildOverlay);
+  }
+
+  Widget buildOverlay(BuildContext context) {
+    final toolbar = ZefyrToolbar.of(context);
+    final buttons = ZefyrButtonList(
+      buttons: <Widget>[
+        SizedBox(width: 8.0),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl1),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl2),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl3),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl4),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl5),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl6),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl7),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl8),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl9),
+        toolbar.buildButton(context, ZefyrToolbarAction.fontQl10),
+      ],
+    );
+    return ZefyrToolbarScaffold(body: buttons);
+  }
+}
+
+/// Controls screed styles.
+///
+/// When pressed, this button displays overlay toolbar with three
+/// buttons for each ql font option.
+class ScreedStyleButton extends StatefulWidget {
+  const ScreedStyleButton({Key key}) : super(key: key);
+
+  @override
+  _ScreedStyleButtonState createState() => _ScreedStyleButtonState();
+}
+
+class _ScreedStyleButtonState extends State<ScreedStyleButton> {
+  @override
+  Widget build(BuildContext context) {
+    final toolbar = ZefyrToolbar.of(context);
+    return toolbar.buildButton(
+      context,
+      ZefyrToolbarAction.screedStyle,
+      onPressed: showOverlay,
+    );
+  }
+
+  void showOverlay() {
+    final toolbar = ZefyrToolbar.of(context);
+    toolbar.showOverlay(buildOverlay);
+  }
+
+  Widget buildOverlay(BuildContext context) {
+    final toolbar = ZefyrToolbar.of(context);
+    final buttons = ZefyrButtonList(
+      buttons: <Widget>[
+        SizedBox(width: 8.0),
+        toolbar.buildButton(context, ZefyrToolbarAction.headingLevel1),
+        toolbar.buildButton(context, ZefyrToolbarAction.headingLevel2),
+        toolbar.buildButton(context, ZefyrToolbarAction.headingLevel3),
+        toolbar.buildButton(
+            context, ZefyrToolbarAction.screedStyleLightHeading1),
+        toolbar.buildButton(
+            context, ZefyrToolbarAction.screedStyleLightHeading2),
+        toolbar.buildButton(
+            context, ZefyrToolbarAction.screedStyleLightHeading3),
+        toolbar.buildButton(context, ZefyrToolbarAction.screedStyleBody1),
+        toolbar.buildButton(context, ZefyrToolbarAction.screedStyleBody2),
+        toolbar.buildButton(context, ZefyrToolbarAction.screedStyleBody3),
+        toolbar.buildButton(context, ZefyrToolbarAction.screedStyleBody4),
+        toolbar.buildButton(context, ZefyrToolbarAction.screedStyleListed),
+      ],
+    );
+    return ZefyrToolbarScaffold(body: buttons);
+  }
+}
+
 /// Controls image attribute.
 ///
 /// When pressed, this button displays overlay toolbar with three

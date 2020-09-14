@@ -35,6 +35,31 @@ enum ZefyrToolbarAction {
   hideKeyboard,
   close,
   confirm,
+
+  fontQl,
+  fontQl1,
+  fontQl2,
+  fontQl3,
+  fontQl4,
+  fontQl5,
+  fontQl6,
+  fontQl7,
+  fontQl8,
+  fontQl9,
+  fontQl10,
+
+  screedStyle,
+  screedStyleHeading1,
+  screedStyleHeading2,
+  screedStyleHeading3,
+  screedStyleLightHeading1,
+  screedStyleLightHeading2,
+  screedStyleLightHeading3,
+  screedStyleBody1,
+  screedStyleBody2,
+  screedStyleBody3,
+  screedStyleBody4,
+  screedStyleListed,
 }
 
 final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
@@ -51,6 +76,29 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
   ZefyrToolbarAction.code: NotusAttribute.block.code,
   ZefyrToolbarAction.quote: NotusAttribute.block.quote,
   ZefyrToolbarAction.horizontalRule: NotusAttribute.embed.horizontalRule,
+  ZefyrToolbarAction.fontQl: NotusAttribute.span,
+  ZefyrToolbarAction.fontQl1: NotusAttribute.span.fontQl1,
+  ZefyrToolbarAction.fontQl2: NotusAttribute.span.fontQl2,
+  ZefyrToolbarAction.fontQl3: NotusAttribute.span.fontQl3,
+  ZefyrToolbarAction.fontQl4: NotusAttribute.span.fontQl4,
+  ZefyrToolbarAction.fontQl5: NotusAttribute.span.fontQl5,
+  ZefyrToolbarAction.fontQl6: NotusAttribute.span.fontQl6,
+  ZefyrToolbarAction.fontQl7: NotusAttribute.span.fontQl7,
+  ZefyrToolbarAction.fontQl8: NotusAttribute.span.fontQl8,
+  ZefyrToolbarAction.fontQl9: NotusAttribute.span.fontQl9,
+  ZefyrToolbarAction.fontQl10: NotusAttribute.span.fontQl10,
+  ZefyrToolbarAction.screedStyle: NotusAttribute.div,
+  // ZefyrToolbarAction.screedStyleHeading1: NotusAttribute.div.heading1,
+  // ZefyrToolbarAction.screedStyleHeading2: NotusAttribute.div.heading2,
+  // ZefyrToolbarAction.screedStyleHeading3: NotusAttribute.div.heading3,
+  ZefyrToolbarAction.screedStyleLightHeading1: NotusAttribute.div.lightHeading1,
+  ZefyrToolbarAction.screedStyleLightHeading2: NotusAttribute.div.lightHeading2,
+  ZefyrToolbarAction.screedStyleLightHeading3: NotusAttribute.div.lightHeading3,
+  ZefyrToolbarAction.screedStyleBody1: NotusAttribute.div.body1,
+  ZefyrToolbarAction.screedStyleBody2: NotusAttribute.div.body2,
+  ZefyrToolbarAction.screedStyleBody3: NotusAttribute.div.body3,
+  ZefyrToolbarAction.screedStyleBody4: NotusAttribute.div.body4,
+  ZefyrToolbarAction.screedStyleListed: NotusAttribute.div.listed,
 };
 
 /// Allows customizing appearance of [ZefyrToolbar].
@@ -91,6 +139,8 @@ class ZefyrToolbarScaffold extends StatelessWidget {
       children.add(toolbar.buildButton(context, ZefyrToolbarAction.close));
     }
     return Container(
+      decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: theme.iconColor))),
       constraints: constraints,
       child: Material(color: theme.color, child: Row(children: children)),
     );
@@ -257,6 +307,8 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
       buildButton(context, ZefyrToolbarAction.underline),
       LinkButton(),
       HeadingButton(),
+      FontQlButton(),
+      ScreedStyleButton(),
       buildButton(context, ZefyrToolbarAction.bulletList),
       buildButton(context, ZefyrToolbarAction.numberList),
       buildButton(context, ZefyrToolbarAction.quote),

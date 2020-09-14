@@ -67,6 +67,9 @@ abstract class NotusAttributeBuilder<T> implements NotusAttributeKey<T> {
 ///
 ///   * [NotusAttribute.bold]
 ///   * [NotusAttribute.italic]
+///   * [NotusAttribute.underline]
+///   * [NotusAttribute.span]
+///   * [NotusAttribute.div]
 ///   * [NotusAttribute.link]
 ///   * [NotusAttribute.heading]
 ///   * [NotusAttribute.block]
@@ -75,6 +78,8 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
     NotusAttribute.bold.key: NotusAttribute.bold,
     NotusAttribute.italic.key: NotusAttribute.italic,
     NotusAttribute.underline.key: NotusAttribute.underline,
+    NotusAttribute.span.key: NotusAttribute.span,
+    NotusAttribute.div.key: NotusAttribute.div,
     NotusAttribute.link.key: NotusAttribute.link,
     NotusAttribute.heading.key: NotusAttribute.heading,
     NotusAttribute.block.key: NotusAttribute.block,
@@ -95,6 +100,9 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
   /// Link style attribute.
   // ignore: const_eval_throws_exception
   static const link = LinkAttributeBuilder._();
+
+  static const span = SpanAttributeBuilder._();
+  static const div = DivAttributeBuilder._();
 
   // Line attributes
 
@@ -371,6 +379,60 @@ class HeadingAttributeBuilder extends NotusAttributeBuilder<int> {
 
   /// Level 3 heading, equivalent of `H3` in HTML.
   NotusAttribute<int> get level3 => NotusAttribute<int>._(key, scope, 3);
+}
+
+class SpanAttributeBuilder extends NotusAttributeBuilder<String> {
+  static const _kSpan = 'span';
+  const SpanAttributeBuilder._() : super._(_kSpan, NotusAttributeScope.inline);
+
+  NotusAttribute<String> get fontQl1 =>
+      NotusAttribute<String>._(key, scope, "ql-font-1");
+  NotusAttribute<String> get fontQl2 =>
+      NotusAttribute<String>._(key, scope, "ql-font-2");
+  NotusAttribute<String> get fontQl3 =>
+      NotusAttribute<String>._(key, scope, "ql-font-3");
+  NotusAttribute<String> get fontQl4 =>
+      NotusAttribute<String>._(key, scope, "ql-font-4");
+  NotusAttribute<String> get fontQl5 =>
+      NotusAttribute<String>._(key, scope, "ql-font-5");
+  NotusAttribute<String> get fontQl6 =>
+      NotusAttribute<String>._(key, scope, "ql-font-6");
+  NotusAttribute<String> get fontQl7 =>
+      NotusAttribute<String>._(key, scope, "ql-font-7");
+  NotusAttribute<String> get fontQl8 =>
+      NotusAttribute<String>._(key, scope, "ql-font-8");
+  NotusAttribute<String> get fontQl9 =>
+      NotusAttribute<String>._(key, scope, "ql-font-9");
+  NotusAttribute<String> get fontQl10 =>
+      NotusAttribute<String>._(key, scope, "ql-font-10");
+}
+
+class DivAttributeBuilder extends NotusAttributeBuilder<String> {
+  static const _kDiv = 'div';
+  const DivAttributeBuilder._() : super._(_kDiv, NotusAttributeScope.line);
+
+  // NotusAttribute<String> get heading1 =>
+  //     NotusAttribute<String>._(key, scope, "heading-1");
+  // NotusAttribute<String> get heading2 =>
+  //     NotusAttribute<String>._(key, scope, "heading-2");
+  // NotusAttribute<String> get heading3 =>
+  //     NotusAttribute<String>._(key, scope, "heading-3");
+  NotusAttribute<String> get lightHeading1 =>
+      NotusAttribute<String>._(key, scope, "lightheader-one");
+  NotusAttribute<String> get lightHeading2 =>
+      NotusAttribute<String>._(key, scope, "lightheader-two");
+  NotusAttribute<String> get lightHeading3 =>
+      NotusAttribute<String>._(key, scope, "lightheader-three");
+  NotusAttribute<String> get body1 =>
+      NotusAttribute<String>._(key, scope, "body-one");
+  NotusAttribute<String> get body2 =>
+      NotusAttribute<String>._(key, scope, "body-two");
+  NotusAttribute<String> get body3 =>
+      NotusAttribute<String>._(key, scope, "body-three");
+  NotusAttribute<String> get body4 =>
+      NotusAttribute<String>._(key, scope, "body-four");
+  NotusAttribute<String> get listed =>
+      NotusAttribute<String>._(key, scope, "listed");
 }
 
 /// Builder for block attribute styles (number/bullet lists, code and quote).
