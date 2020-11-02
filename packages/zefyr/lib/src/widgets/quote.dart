@@ -43,11 +43,13 @@ class ZefyrQuote extends StatelessWidget {
 
     final row = Row(children: <Widget>[Expanded(child: content)]);
     return Container(
+      /*
       decoration: BoxDecoration(
         border: Border(
           left: BorderSide(width: 4.0, color: Colors.grey.shade300),
         ),
       ),
+      */
       padding: EdgeInsets.only(left: indentSize),
       child: row,
     );
