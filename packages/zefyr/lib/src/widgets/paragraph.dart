@@ -68,6 +68,13 @@ class ZefyrParagraph extends StatelessWidget {
         style: style,
         padding: padding,
       );
+    } else if (node.style.contains(NotusAttribute.bq)) {
+      style = style.merge(theme.attributeTheme.quote.textStyle);
+      return ZefyrLine(
+        node: node,
+        style: style,
+        padding: EdgeInsets.zero,
+      );
     } else {
       return ZefyrLine(
         node: node,
