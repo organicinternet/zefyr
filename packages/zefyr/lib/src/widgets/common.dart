@@ -1,11 +1,13 @@
 // Copyright (c) 2018, the Zefyr project authors.  Please see the AUTHORS file
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
+import 'package:flutter/gestures.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:notus/notus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'editable_box.dart';
 import 'horizontal_rule.dart';
@@ -130,9 +132,18 @@ class _ZefyrLineState extends State<ZefyrLine> {
   TextSpan _segmentToTextSpan(Node node, ZefyrThemeData theme) {
     final TextNode segment = node;
     final attrs = segment.style;
+    GestureRecognizer recognizer;
+    if (attrs.contains(NotusAttribute.link)) {
+      final tapGestureRecognizer = TapGestureRecognizer();
+      tapGestureRecognizer.onTap = () {
+        launch(attrs.get(NotusAttribute.link).value);
+      };
+      recognizer = tapGestureRecognizer;
+    }
 
     return TextSpan(
       text: segment.value,
+      recognizer: recognizer,
       style: _getTextStyle(attrs, theme),
     );
   }
