@@ -61,6 +61,33 @@ enum ZefyrToolbarAction {
   screedStyleBody3,
   screedStyleBody4,
   screedStyleListed,
+
+  color,
+  lightMode,
+  darkMode,
+
+  colorPink,
+  colorNeonPink,
+  colorMaroonRed,
+  colorCherryRed,
+  colorCoralRed,
+  colorMahogany,
+  colorOrange,
+  colorYellow,
+  colorNeonYellow,
+  colorForestGreen,
+  colorAppleGreen,
+  colorTeaGreen,
+  colorNeonGreen,
+  colorTealGreen,
+  colorLightBlue,
+  colorOceanBlue,
+  colorLilBlue,
+  colorNavyBlue,
+  colorPlum,
+  colorNeonPurple,
+  colorSuedePurple,
+  colorOrchidPurple
 }
 
 final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
@@ -101,6 +128,31 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
   ZefyrToolbarAction.screedStyleBody3: NotusAttribute.div.body3,
   ZefyrToolbarAction.screedStyleBody4: NotusAttribute.div.body4,
   ZefyrToolbarAction.screedStyleListed: NotusAttribute.div.listed,
+
+  ZefyrToolbarAction.color: NotusAttribute.color,
+
+  ZefyrToolbarAction.colorPink: NotusAttribute.color.pink,
+  ZefyrToolbarAction.colorNeonPink: NotusAttribute.color.neonPink,
+  ZefyrToolbarAction.colorMaroonRed: NotusAttribute.color.maroonRed,
+  ZefyrToolbarAction.colorCherryRed: NotusAttribute.color.cherryRed,
+  ZefyrToolbarAction.colorCoralRed: NotusAttribute.color.coralRed,
+  ZefyrToolbarAction.colorMahogany: NotusAttribute.color.mahogany,
+  ZefyrToolbarAction.colorOrange: NotusAttribute.color.orange,
+  ZefyrToolbarAction.colorYellow: NotusAttribute.color.yellow,
+  ZefyrToolbarAction.colorNeonYellow: NotusAttribute.color.neonYellow,
+  ZefyrToolbarAction.colorForestGreen: NotusAttribute.color.forestGreen,
+  ZefyrToolbarAction.colorAppleGreen: NotusAttribute.color.appleGreen,
+  ZefyrToolbarAction.colorTeaGreen: NotusAttribute.color.teaGreen,
+  ZefyrToolbarAction.colorNeonGreen: NotusAttribute.color.neonGreen,
+  ZefyrToolbarAction.colorTealGreen: NotusAttribute.color.tealGreen,
+  ZefyrToolbarAction.colorLightBlue: NotusAttribute.color.lightBlue,
+  ZefyrToolbarAction.colorOceanBlue: NotusAttribute.color.oceanBlue,
+  ZefyrToolbarAction.colorLilBlue: NotusAttribute.color.lilBlue,
+  ZefyrToolbarAction.colorNavyBlue: NotusAttribute.color.navyBlue,
+  ZefyrToolbarAction.colorPlum: NotusAttribute.color.plum,
+  ZefyrToolbarAction.colorNeonPurple: NotusAttribute.color.neonPurple,
+  ZefyrToolbarAction.colorSuedePurple: NotusAttribute.color.suedePurple,
+  ZefyrToolbarAction.colorOrchidPurple: NotusAttribute.color.orchidPurple,
 };
 
 /// Allows customizing appearance of [ZefyrToolbar].
@@ -308,6 +360,8 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
       buildButton(context, ZefyrToolbarAction.italic),
       buildButton(context, ZefyrToolbarAction.underline),
       buildButton(context, ZefyrToolbarAction.strikethrough),
+      // ColorButton(),
+      ModeColorButton(1),
       LinkButton(),
       HeadingButton(),
       FontQlButton(),
@@ -415,6 +469,9 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.confirm: Icons.check,
     ZefyrToolbarAction.fontQl: Icons.format_size,
     ZefyrToolbarAction.screedStyle: Icons.text_format,
+    ZefyrToolbarAction.color: Icons.color_lens,
+    ZefyrToolbarAction.darkMode: Icons.brightness_2,
+    ZefyrToolbarAction.lightMode: Icons.format_color_text,
   };
 
   static const kSpecialIconSizes = {
@@ -441,6 +498,30 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.fontQl10: '72px',
   };
 
+  static const kColorCircles = {
+    ZefyrToolbarAction.colorPink: Color(0xFFffbcbc),
+    ZefyrToolbarAction.colorNeonPink: Color(0xFFff3796),
+    ZefyrToolbarAction.colorMaroonRed: Color(0xFF751011),
+    ZefyrToolbarAction.colorCherryRed: Color(0xFFe43f5a),
+    ZefyrToolbarAction.colorCoralRed: Color(0xFFf47c7c),
+    ZefyrToolbarAction.colorMahogany: Color(0xFFB64003),
+    ZefyrToolbarAction.colorOrange: Color(0xFFFE8C03),
+    ZefyrToolbarAction.colorYellow: Color(0xFFf7f48b),
+    ZefyrToolbarAction.colorNeonYellow: Color(0xFFfdff38),
+    ZefyrToolbarAction.colorForestGreen: Color(0xFF004a18),
+    ZefyrToolbarAction.colorAppleGreen: Color(0xFFa1de93),
+    ZefyrToolbarAction.colorTeaGreen: Color(0xFFacecd5),
+    ZefyrToolbarAction.colorNeonGreen: Color(0xFF00faac),
+    ZefyrToolbarAction.colorTealGreen: Color(0xFF048481),
+    ZefyrToolbarAction.colorLightBlue: Color(0xFFbeebe9),
+    ZefyrToolbarAction.colorOceanBlue: Color(0xFF2ECFFF),
+    ZefyrToolbarAction.colorLilBlue: Color(0xFF70a1d7),
+    ZefyrToolbarAction.colorNavyBlue: Color(0xFF162447),
+    ZefyrToolbarAction.colorPlum: Color(0xFFd7aefc),
+    ZefyrToolbarAction.colorNeonPurple: Color(0xFFdc2ade),
+    ZefyrToolbarAction.colorSuedePurple: Color(0xFF834c69),
+    ZefyrToolbarAction.colorOrchidPurple: Color(0xFF543864),
+  };
   @override
   Widget buildButton(BuildContext context, ZefyrToolbarAction action,
       {VoidCallback onPressed}) {
@@ -454,7 +535,7 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
         iconSize: size,
         onPressed: onPressed,
       );
-    } else {
+    } else if (kDefaultButtonTexts.containsKey(action)) {
       final text = kDefaultButtonTexts[action];
       print(action);
       assert(text != null);
@@ -464,6 +545,20 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
         action: action,
         text: text,
         style: style,
+        onPressed: onPressed,
+      );
+    } else {
+      final color = kColorCircles[action];
+      assert(color != null);
+      return ZefyrButton.widget(
+        action: action,
+        circle: Container(
+            width: 20,
+            height: 20,
+            decoration: BoxDecoration(
+              color: color,
+              shape: BoxShape.circle,
+            )),
         onPressed: onPressed,
       );
     }
