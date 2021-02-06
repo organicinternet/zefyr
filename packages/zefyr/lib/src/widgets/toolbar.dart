@@ -16,6 +16,7 @@ enum ZefyrToolbarAction {
   bold,
   italic,
   underline,
+  strikethrough,
   link,
   unlink,
   clipboardCopy,
@@ -66,6 +67,7 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
   ZefyrToolbarAction.bold: NotusAttribute.bold,
   ZefyrToolbarAction.italic: NotusAttribute.italic,
   ZefyrToolbarAction.underline: NotusAttribute.underline,
+  ZefyrToolbarAction.strikethrough: NotusAttribute.strikethrough,
   ZefyrToolbarAction.link: NotusAttribute.link,
   ZefyrToolbarAction.heading: NotusAttribute.heading,
   ZefyrToolbarAction.headingLevel1: NotusAttribute.heading.level1,
@@ -305,6 +307,7 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
       buildButton(context, ZefyrToolbarAction.bold),
       buildButton(context, ZefyrToolbarAction.italic),
       buildButton(context, ZefyrToolbarAction.underline),
+      buildButton(context, ZefyrToolbarAction.strikethrough),
       LinkButton(),
       HeadingButton(),
       FontQlButton(),
@@ -393,6 +396,7 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.bold: Icons.format_bold,
     ZefyrToolbarAction.italic: Icons.format_italic,
     ZefyrToolbarAction.underline: Icons.format_underlined,
+    ZefyrToolbarAction.strikethrough: Icons.format_strikethrough,
     ZefyrToolbarAction.link: Icons.link,
     ZefyrToolbarAction.unlink: Icons.link_off,
     ZefyrToolbarAction.clipboardCopy: Icons.content_copy,
@@ -409,6 +413,8 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.hideKeyboard: Icons.keyboard_hide,
     ZefyrToolbarAction.close: Icons.close,
     ZefyrToolbarAction.confirm: Icons.check,
+    ZefyrToolbarAction.fontQl: Icons.format_size,
+    ZefyrToolbarAction.screedStyle: Icons.text_format,
   };
 
   static const kSpecialIconSizes = {
@@ -423,6 +429,16 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.headingLevel1: 'H1',
     ZefyrToolbarAction.headingLevel2: 'H2',
     ZefyrToolbarAction.headingLevel3: 'H3',
+    ZefyrToolbarAction.fontQl1: '16px',
+    ZefyrToolbarAction.fontQl2: '18px',
+    ZefyrToolbarAction.fontQl3: '20px',
+    ZefyrToolbarAction.fontQl4: '22px',
+    ZefyrToolbarAction.fontQl5: '24px',
+    ZefyrToolbarAction.fontQl6: '26px',
+    ZefyrToolbarAction.fontQl7: '28px',
+    ZefyrToolbarAction.fontQl8: '38px',
+    ZefyrToolbarAction.fontQl9: '48px',
+    ZefyrToolbarAction.fontQl10: '72px',
   };
 
   @override
@@ -440,6 +456,7 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
       );
     } else {
       final text = kDefaultButtonTexts[action];
+      print(action);
       assert(text != null);
       final style = theme.textTheme.caption
           .copyWith(fontWeight: FontWeight.bold, fontSize: 14.0);

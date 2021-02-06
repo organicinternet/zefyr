@@ -290,6 +290,9 @@ class AttributeTheme {
   /// Style used to render "underline" text.
   final TextStyle underline;
 
+  /// Style used to render "strikethrough" text.
+  final TextStyle strikethrough;
+
   /// Style used to render text containing links.
   final TextStyle link;
 
@@ -341,6 +344,7 @@ class AttributeTheme {
     this.bold,
     this.italic,
     this.underline,
+    this.strikethrough,
     this.link,
     this.heading1,
     this.heading2,
@@ -392,6 +396,7 @@ class AttributeTheme {
       bold: TextStyle(fontWeight: FontWeight.bold),
       italic: TextStyle(fontStyle: FontStyle.italic),
       underline: TextStyle(decoration: TextDecoration.underline),
+      strikethrough: TextStyle(decoration: TextDecoration.lineThrough),
       link: TextStyle(
         decoration: TextDecoration.underline,
         color: theme.accentColor,
@@ -566,6 +571,7 @@ class AttributeTheme {
     TextStyle bold,
     TextStyle italic,
     TextStyle underline,
+    TextStyle strikethrough,
     TextStyle link,
     LineTheme heading1,
     LineTheme heading2,
@@ -597,6 +603,7 @@ class AttributeTheme {
       bold: bold ?? this.bold,
       italic: italic ?? this.italic,
       underline: underline ?? this.underline,
+      strikethrough: strikethrough ?? this.strikethrough,
       link: link ?? this.link,
       heading1: heading1 ?? this.heading1,
       heading2: heading2 ?? this.heading2,
@@ -637,6 +644,8 @@ class AttributeTheme {
       bold: bold?.merge(other.bold) ?? other.bold,
       italic: italic?.merge(other.italic) ?? other.italic,
       underline: underline?.merge(other.underline) ?? other.underline,
+      strikethrough:
+          strikethrough?.merge(other.strikethrough) ?? other.strikethrough,
       link: link?.merge(other.link) ?? other.link,
       heading1: heading1?.merge(other.heading1) ?? other.heading1,
       heading2: heading2?.merge(other.heading2) ?? other.heading2,
@@ -684,6 +693,7 @@ class AttributeTheme {
     return (otherTheme.bold == bold) &&
         (otherTheme.italic == italic) &&
         (otherTheme.underline == underline) &&
+        (otherTheme.strikethrough == strikethrough) &&
         (otherTheme.link == link) &&
         (otherTheme.heading1 == heading1) &&
         (otherTheme.heading2 == heading2) &&

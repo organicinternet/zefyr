@@ -55,6 +55,7 @@ class ZefyrThemeData {
   final TextStyle boldStyle;
   final TextStyle italicStyle;
   final TextStyle underlineStyle;
+  final TextStyle strikethroughStyle;
   final TextStyle linkStyle;
   final StyleTheme paragraphTheme;
   final HeadingTheme headingTheme;
@@ -77,6 +78,8 @@ class ZefyrThemeData {
     final boldStyle = TextStyle(fontWeight: FontWeight.bold);
     final italicStyle = TextStyle(fontStyle: FontStyle.italic);
     final underlineStyle = TextStyle(decoration: TextDecoration.underline);
+    final strikethroughStyle =
+        TextStyle(decoration: TextDecoration.strikethrough);
     final linkStyle = TextStyle(
         color: themeData.accentColor, decoration: TextDecoration.underline);
 
@@ -84,6 +87,7 @@ class ZefyrThemeData {
       boldStyle: boldStyle,
       italicStyle: italicStyle,
       underlineStyle: underlineStyle,
+      strikethroughStyle: strikethroughStyle,
       linkStyle: linkStyle,
       paragraphTheme: StyleTheme(textStyle: paragraphStyle, padding: padding),
       headingTheme: HeadingTheme.fallback(context),
@@ -99,6 +103,7 @@ class ZefyrThemeData {
     this.boldStyle,
     this.italicStyle,
     this.underlineStyle,
+    this.strikethroughStyle,
     this.linkStyle,
     this.paragraphTheme,
     this.headingTheme,
@@ -114,6 +119,7 @@ class ZefyrThemeData {
     TextStyle boldStyle,
     TextStyle italicStyle,
     TextStyle underlineStyle,
+    TextStyle strikethroughStyle,
     TextStyle linkStyle,
     StyleTheme paragraphTheme,
     HeadingTheme headingTheme,
@@ -127,6 +133,7 @@ class ZefyrThemeData {
       boldStyle: boldStyle ?? this.boldStyle,
       italicStyle: italicStyle ?? this.italicStyle,
       underlineStyle: underlineStyle ?? this.underlineStyle,
+      strikethroughStyle: strikethroughStyle ?? this.strikethroughStyle,
       linkStyle: linkStyle ?? this.linkStyle,
       paragraphTheme: paragraphTheme ?? this.paragraphTheme,
       headingTheme: headingTheme ?? this.headingTheme,
@@ -143,6 +150,7 @@ class ZefyrThemeData {
       boldStyle: other.boldStyle,
       italicStyle: other.italicStyle,
       underlineStyle: other.underlineStyle,
+      strikethroughStyle: other.strikethroughStyle,
       linkStyle: other.linkStyle,
       paragraphTheme: other.paragraphTheme,
       headingTheme: other.headingTheme,
