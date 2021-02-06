@@ -27,7 +27,22 @@ class ZefyrRichText extends LeafRenderObjectWidget {
       text,
       node: node,
       textDirection: Directionality.of(context),
+      textAlign: getTextAlign(node),
     );
+  }
+
+  TextAlign getTextAlign(LineNode node) {
+    final alignment = node.style.get(NotusAttribute.alignment);
+    if (alignment == NotusAttribute.alignment.left) {
+      return TextAlign.left;
+    } else if (alignment == NotusAttribute.alignment.center) {
+      return TextAlign.center;
+    } else if (alignment == NotusAttribute.alignment.right) {
+      return TextAlign.right;
+    } else if (alignment == NotusAttribute.alignment.justify) {
+      return TextAlign.justify;
+    }
+    return TextAlign.start;
   }
 
   @override
@@ -35,7 +50,8 @@ class ZefyrRichText extends LeafRenderObjectWidget {
       BuildContext context, RenderZefyrParagraph renderObject) {
     renderObject
       ..text = text
-      ..node = node;
+      ..node = node
+      ..textAlign = getTextAlign(node);
   }
 }
 
@@ -162,6 +178,13 @@ class RenderZefyrParagraph extends RenderParagraph
     _prototypePainter.text = TextSpan(text: '.', style: value.style);
     _selectionRects = null;
     super.text = value;
+  }
+
+  @override
+  set textAlign(TextAlign value) {
+    assert(value != null);
+    _selectionRects = null;
+    super.textAlign = value;
   }
 
   @override

@@ -84,6 +84,7 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
     NotusAttribute.strikethrough.key: NotusAttribute.strikethrough,
     NotusAttribute.color.key: NotusAttribute.color,
     NotusAttribute.backgroundColor.key: NotusAttribute.backgroundColor,
+    NotusAttribute.alignment.key: NotusAttribute.alignment,
     NotusAttribute.span.key: NotusAttribute.span,
     NotusAttribute.div.key: NotusAttribute.div,
     NotusAttribute.link.key: NotusAttribute.link,
@@ -214,6 +215,21 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
   /// Embed style attribute.
   // ignore: const_eval_throws_exception
   static const embed = EmbedAttributeBuilder._();
+
+  /// Alignment attribute
+  static const alignment = AlignmentAttributeBuilder._();
+
+  /// Alias for [NotusAttribute.alignment.right]
+  static NotusAttribute<String> get rightAlignment => alignment.right;
+
+  /// Alias for [NotusAttribute.alignment.left]
+  static NotusAttribute<String> get leftAlignment => alignment.left;
+
+  /// Alias for [NotusAttribute.alignment.center]
+  static NotusAttribute<String> get centerAlignment => alignment.center;
+
+  /// Alias for [NotusAttribute.alignment.justify]
+  static NotusAttribute<String> get justifyAlignment => alignment.justify;
 
   static NotusAttribute _fromKeyValue(String key, dynamic value) {
     if (!_registry.containsKey(key)) {
@@ -654,6 +670,25 @@ class BlockAttributeBuilder extends NotusAttributeBuilder<String> {
   /// Formats a block of lines as a quote.
   NotusAttribute<String> get quote =>
       NotusAttribute<String>._(key, scope, 'quote');
+}
+
+class AlignmentAttributeBuilder extends NotusAttributeBuilder<String> {
+  static const _kKey = 'alignment';
+
+  const AlignmentAttributeBuilder._()
+      : super._(_kKey, NotusAttributeScope.line);
+
+  NotusAttribute<String> get right =>
+      NotusAttribute<String>._(key, scope, 'right');
+
+  NotusAttribute<String> get left =>
+      NotusAttribute<String>._(key, scope, 'left');
+
+  NotusAttribute<String> get center =>
+      NotusAttribute<String>._(key, scope, 'center');
+
+  NotusAttribute<String> get justify =>
+      NotusAttribute<String>._(key, scope, 'justify');
 }
 
 class EmbedAttributeBuilder

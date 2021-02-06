@@ -18,8 +18,12 @@ import 'theme.dart';
 
 /// Represents single line of rich text document in Zefyr editor.
 class ZefyrLine extends StatefulWidget {
-  const ZefyrLine({Key key, @required this.node, this.style, this.padding})
-      : assert(node != null),
+  const ZefyrLine({
+    Key key,
+    @required this.node,
+    this.style,
+    this.padding,
+  })  : assert(node != null),
         super(key: key);
 
   /// Line in the document represented by this widget.
@@ -119,6 +123,20 @@ class _ZefyrLineState extends State<ZefyrLine> {
     if (target - offset > 0.0) {
       scrollable.position.jumpTo(target);
     }
+  }
+
+  TextAlign getTextAlign(LineNode node) {
+    final alignment = node.style.get(NotusAttribute.alignment);
+    if (alignment == NotusAttribute.alignment.left) {
+      return TextAlign.left;
+    } else if (alignment == NotusAttribute.alignment.center) {
+      return TextAlign.center;
+    } else if (alignment == NotusAttribute.alignment.right) {
+      return TextAlign.right;
+    } else if (alignment == NotusAttribute.alignment.justify) {
+      return TextAlign.justify;
+    }
+    return TextAlign.start;
   }
 
   TextSpan buildText(BuildContext context) {

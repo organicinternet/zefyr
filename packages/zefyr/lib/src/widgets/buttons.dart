@@ -360,24 +360,24 @@ class _ScreedStyleButtonState extends State<ScreedStyleButton> {
   }
 }
 
-// Controls color styles.
+// Controls text alignment styles.
 ///
 /// When pressed, this button displays overlay toolbar with
-/// buttons for each color.
-class ColorButton extends StatefulWidget {
-  const ColorButton({Key key}) : super(key: key);
+/// buttons for each aligntment.
+class TextAlignmentButton extends StatefulWidget {
+  const TextAlignmentButton({Key key}) : super(key: key);
 
   @override
-  _ColorButtonState createState() => _ColorButtonState();
+  _TextAlignmentButtonState createState() => _TextAlignmentButtonState();
 }
 
-class _ColorButtonState extends State<ColorButton> {
+class _TextAlignmentButtonState extends State<TextAlignmentButton> {
   @override
   Widget build(BuildContext context) {
     final toolbar = ZefyrToolbar.of(context);
     return toolbar.buildButton(
       context,
-      ZefyrToolbarAction.color,
+      ZefyrToolbarAction.textAlign,
       onPressed: showOverlay,
     );
   }
@@ -392,8 +392,10 @@ class _ColorButtonState extends State<ColorButton> {
     final buttons = Row(
       children: <Widget>[
         SizedBox(width: 8.0),
-        ModeColorButton(1),
-        ModeColorButton(0),
+        toolbar.buildButton(context, ZefyrToolbarAction.textAlignLeft),
+        toolbar.buildButton(context, ZefyrToolbarAction.textAlignCenter),
+        toolbar.buildButton(context, ZefyrToolbarAction.textAlignRight),
+        toolbar.buildButton(context, ZefyrToolbarAction.textAlignJustify),
       ],
     );
     return ZefyrToolbarScaffold(body: buttons);

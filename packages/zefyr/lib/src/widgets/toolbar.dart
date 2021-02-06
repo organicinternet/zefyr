@@ -112,7 +112,13 @@ enum ZefyrToolbarAction {
   backgroundColorPlum,
   backgroundColorNeonPurple,
   backgroundColorSuedePurple,
-  backgroundColorOrchidPurple
+  backgroundColorOrchidPurple,
+
+  textAlign,
+  textAlignLeft,
+  textAlignCenter,
+  textAlignRight,
+  textAlignJustify,
 }
 
 final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
@@ -223,6 +229,12 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
       NotusAttribute.backgroundColor.suedePurple,
   ZefyrToolbarAction.backgroundColorOrchidPurple:
       NotusAttribute.backgroundColor.orchidPurple,
+
+  ZefyrToolbarAction.textAlign: NotusAttribute.alignment,
+  ZefyrToolbarAction.textAlignLeft: NotusAttribute.leftAlignment,
+  ZefyrToolbarAction.textAlignCenter: NotusAttribute.centerAlignment,
+  ZefyrToolbarAction.textAlignRight: NotusAttribute.rightAlignment,
+  ZefyrToolbarAction.textAlignJustify: NotusAttribute.justifyAlignment,
 };
 
 /// Allows customizing appearance of [ZefyrToolbar].
@@ -430,13 +442,13 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
       buildButton(context, ZefyrToolbarAction.italic),
       buildButton(context, ZefyrToolbarAction.underline),
       buildButton(context, ZefyrToolbarAction.strikethrough),
-      // ColorButton(),
       ModeColorButton(1),
       BackgroundColorButton(),
       LinkButton(),
       HeadingButton(),
       FontQlButton(),
       ScreedStyleButton(),
+      TextAlignmentButton(),
       buildButton(context, ZefyrToolbarAction.bulletList),
       buildButton(context, ZefyrToolbarAction.numberList),
       buildButton(context, ZefyrToolbarAction.quote),
@@ -544,6 +556,11 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.darkMode: Icons.brightness_2,
     ZefyrToolbarAction.lightMode: Icons.format_color_text,
     ZefyrToolbarAction.backgroundColor: Icons.format_color_fill,
+    ZefyrToolbarAction.textAlign: Icons.format_align_left,
+    ZefyrToolbarAction.textAlignLeft: Icons.format_align_left,
+    ZefyrToolbarAction.textAlignCenter: Icons.format_align_center,
+    ZefyrToolbarAction.textAlignRight: Icons.format_align_right,
+    ZefyrToolbarAction.textAlignJustify: Icons.format_align_justify,
   };
 
   static const kSpecialIconSizes = {

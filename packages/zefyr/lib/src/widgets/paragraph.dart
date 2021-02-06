@@ -9,8 +9,11 @@ import 'theme.dart';
 
 /// Represents regular paragraph line in a Zefyr editor.
 class ZefyrParagraph extends StatelessWidget {
-  ZefyrParagraph({Key key, @required this.node, this.blockStyle})
-      : super(key: key);
+  ZefyrParagraph({
+    Key key,
+    @required this.node,
+    this.blockStyle,
+  }) : super(key: key);
 
   final LineNode node;
   final TextStyle blockStyle;
@@ -18,6 +21,7 @@ class ZefyrParagraph extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = ZefyrTheme.of(context);
+    TextAlign textAlign = TextAlign.left;
     var style = theme.defaultLineTheme.textStyle;
     if (blockStyle != null) {
       style = style.merge(blockStyle);
@@ -62,6 +66,18 @@ class ZefyrParagraph extends StatelessWidget {
       if (node.style.get(NotusAttribute.div) == NotusAttribute.div.listed) {
         style = style.merge(theme.attributeTheme.screedStyleListed.textStyle);
         padding = theme.attributeTheme.screedStyleListed.padding;
+      }
+      if (node.style.get(NotusAttribute.alignment) ==
+          NotusAttribute.alignment.center) {
+        textAlign = TextAlign.center;
+      }
+      if (node.style.get(NotusAttribute.alignment) ==
+          NotusAttribute.alignment.right) {
+        textAlign = TextAlign.right;
+      }
+      if (node.style.get(NotusAttribute.alignment) ==
+          NotusAttribute.alignment.justify) {
+        textAlign = TextAlign.justify;
       }
       return ZefyrLine(
         node: node,
