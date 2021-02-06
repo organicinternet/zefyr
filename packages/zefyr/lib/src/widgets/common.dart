@@ -344,6 +344,122 @@ class _ZefyrLineState extends State<ZefyrLine> {
       result = result.copyWith(color: textColor);
     }
 
+    //Background Colors
+    if (style.contains(NotusAttribute.bcPink)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcPink));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcNeonPink)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcNeonPink));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcMaroonRed)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcMaroonRed));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcCherryRed)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcCherryRed));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcCoralRed)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcCoralRed));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcMahogany)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcMahogany));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcOrange)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcOrange));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcYellow)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcYellow));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcNeonYellow)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcNeonYellow));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcForestGreen)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcForestGreen));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcAppleGreen)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcAppleGreen));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcTeaGreen)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcTeaGreen));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcNeonGreen)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcNeonGreen));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcTealGreen)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcTealGreen));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcLBlue)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcLBlue));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcOceanBlue)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcOceanBlue));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcLilBlue)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcLilBlue));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcNavyBlue)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcNavyBlue));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcPlum)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcPlum));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcNeonPurple)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcNeonPurple));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcSuedePurple)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcSuedePurple));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+    if (style.contains(NotusAttribute.bcOrchidPurple)) {
+      final textColor =
+          hexStringToColor(style.value<String>(NotusAttribute.bcOrchidPurple));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
     return result;
   }
 

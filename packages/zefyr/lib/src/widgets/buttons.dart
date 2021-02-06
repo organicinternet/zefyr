@@ -468,6 +468,61 @@ class _ModeColorButtonState extends State<ModeColorButton> {
   }
 }
 
+//Light mode and dark mode colors
+//
+//Shows colors for light mode and dark mode depending on what is passed in:
+//0 - Dark Mode; 1 - Light Mode
+class BackgroundColorButton extends StatefulWidget {
+  BackgroundColorButton();
+  @override
+  _BackgroundColorButtonState createState() => _BackgroundColorButtonState();
+}
+
+class _BackgroundColorButtonState extends State<BackgroundColorButton> {
+  @override
+  Widget build(BuildContext context) {
+    final toolbar = ZefyrToolbar.of(context);
+    return toolbar.buildButton(
+      context,
+      ZefyrToolbarAction.backgroundColor,
+      onPressed: showOverlay,
+    );
+  }
+
+  void showOverlay() {
+    final toolbar = ZefyrToolbar.of(context);
+    toolbar.showOverlay(buildOverlay);
+  }
+
+  Widget buildOverlay(BuildContext context) {
+    final toolbar = ZefyrToolbar.of(context);
+
+    return ZefyrToolbarScaffold(
+      body: ZefyrButtonList(
+        buttons: [
+          SizedBox(width: 8.0),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorMaroonRed),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorCherryRed),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorMahogany),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorForestGreen),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorTealGreen),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorNavyBlue),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorSuedePurple),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.backgroundColorOrchidPurple),
+        ],
+      ),
+    );
+  }
+}
+
 /// Controls image attribute.
 ///
 /// When pressed, this button displays overlay toolbar with three

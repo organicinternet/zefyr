@@ -170,7 +170,8 @@ class ZefyrController extends ChangeNotifier {
             attribute.key == NotusAttribute.italic.key ||
             attribute.key == NotusAttribute.underline.key ||
             attribute.key == NotusAttribute.strikethrough.key ||
-            attribute.key == NotusAttribute.color.key)) {
+            attribute.key == NotusAttribute.color.key ||
+            attribute.key == NotusAttribute.backgroundColor.key)) {
       // Add the attribute to our toggledStyle. It will be used later upon insertion.
       _toggledStyles = toggledStyles.put(attribute);
     }

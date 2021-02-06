@@ -87,7 +87,32 @@ enum ZefyrToolbarAction {
   colorPlum,
   colorNeonPurple,
   colorSuedePurple,
-  colorOrchidPurple
+  colorOrchidPurple,
+
+  backgroundColor,
+
+  backgroundColorPink,
+  backgroundColorNeonPink,
+  backgroundColorMaroonRed,
+  backgroundColorCherryRed,
+  backgroundColorCoralRed,
+  backgroundColorMahogany,
+  backgroundColorOrange,
+  backgroundColorYellow,
+  backgroundColorNeonYellow,
+  backgroundColorForestGreen,
+  backgroundColorAppleGreen,
+  backgroundColorTeaGreen,
+  backgroundColorNeonGreen,
+  backgroundColorTealGreen,
+  backgroundColorLightBlue,
+  backgroundColorOceanBlue,
+  backgroundColorLilBlue,
+  backgroundColorNavyBlue,
+  backgroundColorPlum,
+  backgroundColorNeonPurple,
+  backgroundColorSuedePurple,
+  backgroundColorOrchidPurple
 }
 
 final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
@@ -153,6 +178,51 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
   ZefyrToolbarAction.colorNeonPurple: NotusAttribute.color.neonPurple,
   ZefyrToolbarAction.colorSuedePurple: NotusAttribute.color.suedePurple,
   ZefyrToolbarAction.colorOrchidPurple: NotusAttribute.color.orchidPurple,
+
+  ZefyrToolbarAction.backgroundColor: NotusAttribute.backgroundColor,
+
+  ZefyrToolbarAction.backgroundColorPink: NotusAttribute.backgroundColor.pink,
+  ZefyrToolbarAction.backgroundColorNeonPink:
+      NotusAttribute.backgroundColor.neonPink,
+  ZefyrToolbarAction.backgroundColorMaroonRed:
+      NotusAttribute.backgroundColor.maroonRed,
+  ZefyrToolbarAction.backgroundColorCherryRed:
+      NotusAttribute.backgroundColor.cherryRed,
+  ZefyrToolbarAction.backgroundColorCoralRed:
+      NotusAttribute.backgroundColor.coralRed,
+  ZefyrToolbarAction.backgroundColorMahogany:
+      NotusAttribute.backgroundColor.mahogany,
+  ZefyrToolbarAction.backgroundColorOrange:
+      NotusAttribute.backgroundColor.orange,
+  ZefyrToolbarAction.backgroundColorYellow:
+      NotusAttribute.backgroundColor.yellow,
+  ZefyrToolbarAction.backgroundColorNeonYellow:
+      NotusAttribute.backgroundColor.neonYellow,
+  ZefyrToolbarAction.backgroundColorForestGreen:
+      NotusAttribute.backgroundColor.forestGreen,
+  ZefyrToolbarAction.backgroundColorAppleGreen:
+      NotusAttribute.backgroundColor.appleGreen,
+  ZefyrToolbarAction.backgroundColorTeaGreen:
+      NotusAttribute.backgroundColor.teaGreen,
+  ZefyrToolbarAction.backgroundColorNeonGreen:
+      NotusAttribute.backgroundColor.neonGreen,
+  ZefyrToolbarAction.backgroundColorTealGreen:
+      NotusAttribute.backgroundColor.tealGreen,
+  ZefyrToolbarAction.backgroundColorLightBlue:
+      NotusAttribute.backgroundColor.lightBlue,
+  ZefyrToolbarAction.backgroundColorOceanBlue:
+      NotusAttribute.backgroundColor.oceanBlue,
+  ZefyrToolbarAction.backgroundColorLilBlue:
+      NotusAttribute.backgroundColor.lilBlue,
+  ZefyrToolbarAction.backgroundColorNavyBlue:
+      NotusAttribute.backgroundColor.navyBlue,
+  ZefyrToolbarAction.backgroundColorPlum: NotusAttribute.backgroundColor.plum,
+  ZefyrToolbarAction.backgroundColorNeonPurple:
+      NotusAttribute.backgroundColor.neonPurple,
+  ZefyrToolbarAction.backgroundColorSuedePurple:
+      NotusAttribute.backgroundColor.suedePurple,
+  ZefyrToolbarAction.backgroundColorOrchidPurple:
+      NotusAttribute.backgroundColor.orchidPurple,
 };
 
 /// Allows customizing appearance of [ZefyrToolbar].
@@ -362,6 +432,7 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
       buildButton(context, ZefyrToolbarAction.strikethrough),
       // ColorButton(),
       ModeColorButton(1),
+      BackgroundColorButton(),
       LinkButton(),
       HeadingButton(),
       FontQlButton(),
@@ -472,6 +543,7 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.color: Icons.color_lens,
     ZefyrToolbarAction.darkMode: Icons.brightness_2,
     ZefyrToolbarAction.lightMode: Icons.format_color_text,
+    ZefyrToolbarAction.backgroundColor: Icons.format_color_fill,
   };
 
   static const kSpecialIconSizes = {
@@ -521,6 +593,28 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.colorNeonPurple: Color(0xFFdc2ade),
     ZefyrToolbarAction.colorSuedePurple: Color(0xFF834c69),
     ZefyrToolbarAction.colorOrchidPurple: Color(0xFF543864),
+    ZefyrToolbarAction.backgroundColorPink: Color(0xFFffbcbc),
+    ZefyrToolbarAction.backgroundColorNeonPink: Color(0xFFff3796),
+    ZefyrToolbarAction.backgroundColorMaroonRed: Color(0xFF751011),
+    ZefyrToolbarAction.backgroundColorCherryRed: Color(0xFFe43f5a),
+    ZefyrToolbarAction.backgroundColorCoralRed: Color(0xFFf47c7c),
+    ZefyrToolbarAction.backgroundColorMahogany: Color(0xFFB64003),
+    ZefyrToolbarAction.backgroundColorOrange: Color(0xFFFE8C03),
+    ZefyrToolbarAction.backgroundColorYellow: Color(0xFFf7f48b),
+    ZefyrToolbarAction.backgroundColorNeonYellow: Color(0xFFfdff38),
+    ZefyrToolbarAction.backgroundColorForestGreen: Color(0xFF004a18),
+    ZefyrToolbarAction.backgroundColorAppleGreen: Color(0xFFa1de93),
+    ZefyrToolbarAction.backgroundColorTeaGreen: Color(0xFFacecd5),
+    ZefyrToolbarAction.backgroundColorNeonGreen: Color(0xFF00faac),
+    ZefyrToolbarAction.backgroundColorTealGreen: Color(0xFF048481),
+    ZefyrToolbarAction.backgroundColorLightBlue: Color(0xFFbeebe9),
+    ZefyrToolbarAction.backgroundColorOceanBlue: Color(0xFF2ECFFF),
+    ZefyrToolbarAction.backgroundColorLilBlue: Color(0xFF70a1d7),
+    ZefyrToolbarAction.backgroundColorNavyBlue: Color(0xFF162447),
+    ZefyrToolbarAction.backgroundColorPlum: Color(0xFFd7aefc),
+    ZefyrToolbarAction.backgroundColorNeonPurple: Color(0xFFdc2ade),
+    ZefyrToolbarAction.backgroundColorSuedePurple: Color(0xFF834c69),
+    ZefyrToolbarAction.backgroundColorOrchidPurple: Color(0xFF543864),
   };
   @override
   Widget buildButton(BuildContext context, ZefyrToolbarAction action,

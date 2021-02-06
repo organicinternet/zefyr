@@ -70,6 +70,7 @@ abstract class NotusAttributeBuilder<T> implements NotusAttributeKey<T> {
 ///   * [NotusAttribute.underline]
 ///   * [NotusAttribute.strikethrough]
 ///   * [NotusAttribute.color]
+///   * [NotusAttribute.backgroundColor]
 ///   * [NotusAttribute.span]
 ///   * [NotusAttribute.div]
 ///   * [NotusAttribute.link]
@@ -82,6 +83,7 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
     NotusAttribute.underline.key: NotusAttribute.underline,
     NotusAttribute.strikethrough.key: NotusAttribute.strikethrough,
     NotusAttribute.color.key: NotusAttribute.color,
+    NotusAttribute.backgroundColor.key: NotusAttribute.backgroundColor,
     NotusAttribute.span.key: NotusAttribute.span,
     NotusAttribute.div.key: NotusAttribute.div,
     NotusAttribute.link.key: NotusAttribute.link,
@@ -106,6 +108,9 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
 
   //color style attribute
   static const color = ColorAttributeBuilder._();
+
+  //color style attribute
+  static const backgroundColor = BackgroundColorAttributeBuilder._();
 
   /// Aliases for [NotusAttribute.color.<color_foo>].
   static NotusAttribute<String> get cPink => color.pink;
@@ -135,6 +140,38 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
   static NotusAttribute<String> get cNeonPurple => color.neonPurple;
   static NotusAttribute<String> get cSuedePurple => color.suedePurple;
   static NotusAttribute<String> get cOrchidPurple => color.orchidPurple;
+
+  /// Aliases for [NotusAttribute.backgroundColor.<color_foo>].
+  static NotusAttribute<String> get bcPink => backgroundColor.pink;
+  static NotusAttribute<String> get bcNeonPink => backgroundColor.neonPink;
+  static NotusAttribute<String> get bcMaroonRed => backgroundColor.maroonRed;
+  static NotusAttribute<String> get bcCherryRed => backgroundColor.cherryRed;
+  static NotusAttribute<String> get bcCoralRed => backgroundColor.coralRed;
+  static NotusAttribute<String> get bcMahogany => backgroundColor.mahogany;
+
+  static NotusAttribute<String> get bcOrange => backgroundColor.orange;
+
+  static NotusAttribute<String> get bcYellow => backgroundColor.yellow;
+  static NotusAttribute<String> get bcNeonYellow => backgroundColor.neonYellow;
+
+  static NotusAttribute<String> get bcForestGreen =>
+      backgroundColor.forestGreen;
+  static NotusAttribute<String> get bcAppleGreen => backgroundColor.appleGreen;
+  static NotusAttribute<String> get bcTeaGreen => backgroundColor.teaGreen;
+  static NotusAttribute<String> get bcNeonGreen => backgroundColor.neonGreen;
+  static NotusAttribute<String> get bcTealGreen => backgroundColor.tealGreen;
+
+  static NotusAttribute<String> get bcLBlue => backgroundColor.lightBlue;
+  static NotusAttribute<String> get bcOceanBlue => backgroundColor.oceanBlue;
+  static NotusAttribute<String> get bcLilBlue => backgroundColor.lilBlue;
+  static NotusAttribute<String> get bcNavyBlue => backgroundColor.navyBlue;
+
+  static NotusAttribute<String> get bcPlum => backgroundColor.plum;
+  static NotusAttribute<String> get bcNeonPurple => backgroundColor.neonPurple;
+  static NotusAttribute<String> get bcSuedePurple =>
+      backgroundColor.suedePurple;
+  static NotusAttribute<String> get bcOrchidPurple =>
+      backgroundColor.orchidPurple;
 
   /// Link style attribute.
   // ignore: const_eval_throws_exception
@@ -398,6 +435,63 @@ class _StrikethroughAttribute extends NotusAttribute<bool> {
 class ColorAttributeBuilder extends NotusAttributeBuilder<String> {
   static const _kColor = 'color';
   const ColorAttributeBuilder._()
+      : super._(_kColor, NotusAttributeScope.inline);
+
+  NotusAttribute<String> get pink =>
+      NotusAttribute<String>._(key, scope, "ffbcbc");
+  NotusAttribute<String> get neonPink =>
+      NotusAttribute<String>._(key, scope, "ff3796");
+  NotusAttribute<String> get maroonRed =>
+      NotusAttribute<String>._(key, scope, "751011");
+  NotusAttribute<String> get cherryRed =>
+      NotusAttribute<String>._(key, scope, "e43f5a");
+  NotusAttribute<String> get coralRed =>
+      NotusAttribute<String>._(key, scope, "f47c7c");
+  NotusAttribute<String> get mahogany =>
+      NotusAttribute<String>._(key, scope, "B64003");
+
+  NotusAttribute<String> get orange =>
+      NotusAttribute<String>._(key, scope, "FE8C03");
+
+  NotusAttribute<String> get yellow =>
+      NotusAttribute<String>._(key, scope, "f7f48b");
+  NotusAttribute<String> get neonYellow =>
+      NotusAttribute<String>._(key, scope, "fdff38");
+
+  NotusAttribute<String> get forestGreen =>
+      NotusAttribute<String>._(key, scope, "004a18");
+  NotusAttribute<String> get appleGreen =>
+      NotusAttribute<String>._(key, scope, "a1de93");
+  NotusAttribute<String> get teaGreen =>
+      NotusAttribute<String>._(key, scope, "acecd5");
+  NotusAttribute<String> get neonGreen =>
+      NotusAttribute<String>._(key, scope, "00faac");
+  NotusAttribute<String> get tealGreen =>
+      NotusAttribute<String>._(key, scope, "048481");
+
+  NotusAttribute<String> get lightBlue =>
+      NotusAttribute<String>._(key, scope, "beebe9");
+  NotusAttribute<String> get oceanBlue =>
+      NotusAttribute<String>._(key, scope, "2ECFFF");
+  NotusAttribute<String> get lilBlue =>
+      NotusAttribute<String>._(key, scope, "70a1d7");
+  NotusAttribute<String> get navyBlue =>
+      NotusAttribute<String>._(key, scope, "162447");
+
+  NotusAttribute<String> get plum =>
+      NotusAttribute<String>._(key, scope, "d7aefc");
+  NotusAttribute<String> get neonPurple =>
+      NotusAttribute<String>._(key, scope, "dc2ade");
+  NotusAttribute<String> get suedePurple =>
+      NotusAttribute<String>._(key, scope, "834c69");
+  NotusAttribute<String> get orchidPurple =>
+      NotusAttribute<String>._(key, scope, "543864");
+}
+
+/// Builder for color attribute styles.
+class BackgroundColorAttributeBuilder extends NotusAttributeBuilder<String> {
+  static const _kColor = 'backgroundColor';
+  const BackgroundColorAttributeBuilder._()
       : super._(_kColor, NotusAttributeScope.inline);
 
   NotusAttribute<String> get pink =>
