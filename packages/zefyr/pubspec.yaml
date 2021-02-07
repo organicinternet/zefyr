@@ -14,7 +14,10 @@ dependencies:
   url_launcher: ^5.0.0
   quill_delta: ^1.0.0
   notus:
-    path: ../notus
+    git:
+      url: git://github.com/organicinternet/zefyr.git
+      path: packages/notus/
+      ref: master
   meta: ^1.1.0
   quiver_hashcode: ^2.0.0
 
@@ -22,3 +25,5 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic: ^1.0.0
+
+publish_to: none

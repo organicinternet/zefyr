@@ -79,7 +79,7 @@ class ZefyrThemeData {
     final italicStyle = TextStyle(fontStyle: FontStyle.italic);
     final underlineStyle = TextStyle(decoration: TextDecoration.underline);
     final strikethroughStyle =
-        TextStyle(decoration: TextDecoration.strikethrough);
+        TextStyle(decoration: TextDecoration.lineThrough);
     final linkStyle = TextStyle(
         color: themeData.accentColor, decoration: TextDecoration.underline);
 
