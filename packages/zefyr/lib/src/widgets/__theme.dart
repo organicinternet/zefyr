@@ -174,10 +174,22 @@ class HeadingTheme {
   /// Style theme for level 3 headings.
   final StyleTheme level3;
 
+  /// Style theme for light 1 headings.
+  final StyleTheme light1;
+
+  /// Style theme for light 2 headings.
+  final StyleTheme light2;
+
+  /// Style theme for light 3 headings.
+  final StyleTheme light3;
+
   HeadingTheme({
     @required this.level1,
     @required this.level2,
     @required this.level3,
+    @required this.light1,
+    @required this.light2,
+    @required this.light3,
   });
 
   /// Creates fallback theme for headings.

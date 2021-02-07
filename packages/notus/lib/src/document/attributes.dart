@@ -72,7 +72,6 @@ abstract class NotusAttributeBuilder<T> implements NotusAttributeKey<T> {
 ///   * [NotusAttribute.color]
 ///   * [NotusAttribute.backgroundColor]
 ///   * [NotusAttribute.span]
-///   * [NotusAttribute.div]
 ///   * [NotusAttribute.link]
 ///   * [NotusAttribute.heading]
 ///   * [NotusAttribute.block]
@@ -86,7 +85,7 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
     NotusAttribute.backgroundColor.key: NotusAttribute.backgroundColor,
     NotusAttribute.alignment.key: NotusAttribute.alignment,
     NotusAttribute.span.key: NotusAttribute.span,
-    NotusAttribute.div.key: NotusAttribute.div,
+    NotusAttribute.p.key: NotusAttribute.p,
     NotusAttribute.link.key: NotusAttribute.link,
     NotusAttribute.heading.key: NotusAttribute.heading,
     NotusAttribute.block.key: NotusAttribute.block,
@@ -179,7 +178,8 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
   static const link = LinkAttributeBuilder._();
 
   static const span = SpanAttributeBuilder._();
-  static const div = DivAttributeBuilder._();
+
+  static const p = ParagraphAttributeBuilder._();
 
   // Line attributes
 
@@ -195,6 +195,15 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
 
   /// Alias for [NotusAttribute.heading.level3].
   static NotusAttribute<int> get h3 => heading.level3;
+
+  /// Alias for [NotusAttribute.heading.light1].
+  static NotusAttribute<int> get lightH1 => heading.light1;
+
+  /// Alias for [NotusAttribute.heading.light2].
+  static NotusAttribute<int> get lightH2 => heading.light2;
+
+  /// Alias for [NotusAttribute.heading.light3].
+  static NotusAttribute<int> get lightH3 => heading.light3;
 
   /// Block attribute
   // ignore: const_eval_throws_exception
@@ -591,6 +600,32 @@ class HeadingAttributeBuilder extends NotusAttributeBuilder<int> {
 
   /// Level 3 heading, equivalent of `H3` in HTML.
   NotusAttribute<int> get level3 => NotusAttribute<int>._(key, scope, 3);
+
+  /// Level 1 light heading, equivalent of `H1` class="lightheading-one" in HTML.
+  NotusAttribute<int> get light1 => NotusAttribute<int>._(key, scope, 11);
+
+  /// Level 2 heading, equivalent of `H2` in HTML.
+  NotusAttribute<int> get light2 => NotusAttribute<int>._(key, scope, 12);
+
+  /// Level 3 heading, equivalent of `H3` in HTML.
+  NotusAttribute<int> get light3 => NotusAttribute<int>._(key, scope, 13);
+}
+
+class ParagraphAttributeBuilder extends NotusAttributeBuilder<String> {
+  static const _kTag = 'p';
+  const ParagraphAttributeBuilder._()
+      : super._(_kTag, NotusAttributeScope.inline);
+
+  NotusAttribute<String> get body1 =>
+      NotusAttribute<String>._(key, scope, "body-one");
+  NotusAttribute<String> get body2 =>
+      NotusAttribute<String>._(key, scope, null); // body-two is default
+  NotusAttribute<String> get body3 =>
+      NotusAttribute<String>._(key, scope, "body-three");
+  NotusAttribute<String> get body4 =>
+      NotusAttribute<String>._(key, scope, "body-four");
+  NotusAttribute<String> get listed =>
+      NotusAttribute<String>._(key, scope, "listed");
 }
 
 class SpanAttributeBuilder extends NotusAttributeBuilder<String> {
@@ -617,34 +652,6 @@ class SpanAttributeBuilder extends NotusAttributeBuilder<String> {
       NotusAttribute<String>._(key, scope, "ql-font-9");
   NotusAttribute<String> get fontQl10 =>
       NotusAttribute<String>._(key, scope, "ql-font-10");
-}
-
-class DivAttributeBuilder extends NotusAttributeBuilder<String> {
-  static const _kDiv = 'div';
-  const DivAttributeBuilder._() : super._(_kDiv, NotusAttributeScope.line);
-
-  // NotusAttribute<String> get heading1 =>
-  //     NotusAttribute<String>._(key, scope, "heading-1");
-  // NotusAttribute<String> get heading2 =>
-  //     NotusAttribute<String>._(key, scope, "heading-2");
-  // NotusAttribute<String> get heading3 =>
-  //     NotusAttribute<String>._(key, scope, "heading-3");
-  NotusAttribute<String> get lightHeading1 =>
-      NotusAttribute<String>._(key, scope, "lightheader-one");
-  NotusAttribute<String> get lightHeading2 =>
-      NotusAttribute<String>._(key, scope, "lightheader-two");
-  NotusAttribute<String> get lightHeading3 =>
-      NotusAttribute<String>._(key, scope, "lightheader-three");
-  NotusAttribute<String> get body1 =>
-      NotusAttribute<String>._(key, scope, "body-one");
-  NotusAttribute<String> get body2 =>
-      NotusAttribute<String>._(key, scope, "body-two");
-  NotusAttribute<String> get body3 =>
-      NotusAttribute<String>._(key, scope, "body-three");
-  NotusAttribute<String> get body4 =>
-      NotusAttribute<String>._(key, scope, "body-four");
-  NotusAttribute<String> get listed =>
-      NotusAttribute<String>._(key, scope, "listed");
 }
 
 /// Builder for block attribute styles (number/bullet lists, code and quote).

@@ -147,21 +147,16 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
   ZefyrToolbarAction.fontQl8: NotusAttribute.span.fontQl8,
   ZefyrToolbarAction.fontQl9: NotusAttribute.span.fontQl9,
   ZefyrToolbarAction.fontQl10: NotusAttribute.span.fontQl10,
-  ZefyrToolbarAction.screedStyle: NotusAttribute.div,
-  // ZefyrToolbarAction.screedStyleHeading1: NotusAttribute.div.heading1,
-  // ZefyrToolbarAction.screedStyleHeading2: NotusAttribute.div.heading2,
-  // ZefyrToolbarAction.screedStyleHeading3: NotusAttribute.div.heading3,
-  ZefyrToolbarAction.screedStyleLightHeading1: NotusAttribute.div.lightHeading1,
-  ZefyrToolbarAction.screedStyleLightHeading2: NotusAttribute.div.lightHeading2,
-  ZefyrToolbarAction.screedStyleLightHeading3: NotusAttribute.div.lightHeading3,
-  ZefyrToolbarAction.screedStyleBody1: NotusAttribute.div.body1,
-  ZefyrToolbarAction.screedStyleBody2: NotusAttribute.div.body2,
-  ZefyrToolbarAction.screedStyleBody3: NotusAttribute.div.body3,
-  ZefyrToolbarAction.screedStyleBody4: NotusAttribute.div.body4,
-  ZefyrToolbarAction.screedStyleListed: NotusAttribute.div.listed,
-
+  ZefyrToolbarAction.screedStyle: NotusAttribute.p,
+  ZefyrToolbarAction.screedStyleLightHeading1: NotusAttribute.heading.light1,
+  ZefyrToolbarAction.screedStyleLightHeading2: NotusAttribute.heading.light2,
+  ZefyrToolbarAction.screedStyleLightHeading3: NotusAttribute.heading.light3,
+  ZefyrToolbarAction.screedStyleBody1: NotusAttribute.p.body1,
+  ZefyrToolbarAction.screedStyleBody2: NotusAttribute.p.body2,
+  ZefyrToolbarAction.screedStyleBody3: NotusAttribute.p.body3,
+  ZefyrToolbarAction.screedStyleBody4: NotusAttribute.p.body4,
+  ZefyrToolbarAction.screedStyleListed: NotusAttribute.p.listed,
   ZefyrToolbarAction.color: NotusAttribute.color,
-
   ZefyrToolbarAction.colorPink: NotusAttribute.color.pink,
   ZefyrToolbarAction.colorNeonPink: NotusAttribute.color.neonPink,
   ZefyrToolbarAction.colorMaroonRed: NotusAttribute.color.maroonRed,
@@ -184,9 +179,7 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
   ZefyrToolbarAction.colorNeonPurple: NotusAttribute.color.neonPurple,
   ZefyrToolbarAction.colorSuedePurple: NotusAttribute.color.suedePurple,
   ZefyrToolbarAction.colorOrchidPurple: NotusAttribute.color.orchidPurple,
-
   ZefyrToolbarAction.backgroundColor: NotusAttribute.backgroundColor,
-
   ZefyrToolbarAction.backgroundColorPink: NotusAttribute.backgroundColor.pink,
   ZefyrToolbarAction.backgroundColorNeonPink:
       NotusAttribute.backgroundColor.neonPink,
@@ -229,7 +222,6 @@ final kZefyrToolbarAttributeActions = <ZefyrToolbarAction, NotusAttributeKey>{
       NotusAttribute.backgroundColor.suedePurple,
   ZefyrToolbarAction.backgroundColorOrchidPurple:
       NotusAttribute.backgroundColor.orchidPurple,
-
   ZefyrToolbarAction.textAlign: NotusAttribute.alignment,
   ZefyrToolbarAction.textAlignLeft: NotusAttribute.leftAlignment,
   ZefyrToolbarAction.textAlignCenter: NotusAttribute.centerAlignment,

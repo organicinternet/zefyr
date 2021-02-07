@@ -127,5 +127,7 @@ class _FullPageEditorScreenState extends State<FullPageEditorScreen> {
     setState(() {
       _editing = false;
     });
+    var jsonString = json.encode(_controller.document.toJson());
+    print(jsonString);
   }
 }
