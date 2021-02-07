@@ -168,11 +168,16 @@ class _ZefyrLineState extends State<ZefyrLine> {
 
   TextStyle _getTextStyle(NotusStyle style, ZefyrThemeData theme) {
     TextStyle result = TextStyle();
-    final hexStringToColor = (String hex) {
-      hex = hex.replaceFirst('#', '');
-      hex = hex.length == 6 ? 'ff' + hex : hex;
-      int val = int.parse(hex, radix: 16);
-      return Color(val);
+    final rgbStringToColor = (String rgb) {
+      rgb = rgb.replaceFirst('rgb(', '');
+      rgb = rgb.replaceAll(')', '');
+      var values = rgb.split(', ');
+      return Color.fromARGB(
+        255,
+        int.parse(values[0]),
+        int.parse(values[1]),
+        int.parse(values[2]),
+      );
     };
     if (style.containsSame(NotusAttribute.bold)) {
       result = result.merge(theme.attributeTheme.bold);
@@ -247,234 +252,424 @@ class _ZefyrLineState extends State<ZefyrLine> {
       result = result.merge(theme.attributeTheme.link);
     }
     //Colors
-    if (style.contains(NotusAttribute.cPink)) {
+    if (style.contains(NotusAttribute.black)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cPink));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cNeonPink)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cNeonPink));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cMaroonRed)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cMaroonRed));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cCherryRed)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cCherryRed));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cCoralRed)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cCoralRed));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cMahogany)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cMahogany));
+          rgbStringToColor(style.value<String>(NotusAttribute.black));
       result = result.copyWith(color: textColor);
     }
 
-    if (style.contains(NotusAttribute.cOrange)) {
+    if (style.contains(NotusAttribute.red)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cOrange));
+          rgbStringToColor(style.value<String>(NotusAttribute.red));
       result = result.copyWith(color: textColor);
     }
 
-    if (style.contains(NotusAttribute.cYellow)) {
+    if (style.contains(NotusAttribute.orange)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cYellow));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cNeonYellow)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cNeonYellow));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cForestGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cForestGreen));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cAppleGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cAppleGreen));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cTeaGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cTeaGreen));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cNeonGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cNeonGreen));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cTealGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cTealGreen));
+          rgbStringToColor(style.value<String>(NotusAttribute.orange));
       result = result.copyWith(color: textColor);
     }
 
-    if (style.contains(NotusAttribute.cLBlue)) {
+    if (style.contains(NotusAttribute.yellow)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cLBlue));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cOceanBlue)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cOceanBlue));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cLilBlue)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cLilBlue));
-      result = result.copyWith(color: textColor);
-    }
-    if (style.contains(NotusAttribute.cNavyBlue)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cNavyBlue));
+          rgbStringToColor(style.value<String>(NotusAttribute.yellow));
       result = result.copyWith(color: textColor);
     }
 
-    if (style.contains(NotusAttribute.cPlum)) {
+    if (style.contains(NotusAttribute.green)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cPlum));
+          rgbStringToColor(style.value<String>(NotusAttribute.green));
       result = result.copyWith(color: textColor);
     }
-    if (style.contains(NotusAttribute.cNeonPurple)) {
+
+    if (style.contains(NotusAttribute.blue)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cNeonPurple));
+          rgbStringToColor(style.value<String>(NotusAttribute.blue));
       result = result.copyWith(color: textColor);
     }
-    if (style.contains(NotusAttribute.cSuedePurple)) {
+
+    if (style.contains(NotusAttribute.purple)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cSuedePurple));
+          rgbStringToColor(style.value<String>(NotusAttribute.purple));
       result = result.copyWith(color: textColor);
     }
-    if (style.contains(NotusAttribute.cOrchidPurple)) {
+
+    if (style.contains(NotusAttribute.white)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.cOrchidPurple));
+          rgbStringToColor(style.value<String>(NotusAttribute.white));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.pink)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.pink));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.magnolia)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.magnolia));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.cream)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.cream));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.mint)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.mint));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.eggshell)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.eggshell));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.mauve)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.mauve));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.lightGrey)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.lightGrey));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.rosy)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.rosy));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.amber)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.amber));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.canary)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.canary));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.regent)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.regent));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.euston)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.euston));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.premier)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.premier));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.midGrey)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.midGrey));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.maroon)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.maroon));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.mustard)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.mustard));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.sick)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.sick));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.snooker)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.snooker));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.everton)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.everton));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.lenny)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.lenny));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.charcoal)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.charcoal));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.budget)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.budget));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.brown)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.brown));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bean)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bean));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.aftereight)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.aftereight));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.ocean)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.ocean));
+      result = result.copyWith(color: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bruise)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bruise));
       result = result.copyWith(color: textColor);
     }
 
     //Background Colors
-    if (style.contains(NotusAttribute.bcPink)) {
+    if (style.contains(NotusAttribute.bcblack)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcPink));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcNeonPink)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcNeonPink));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcMaroonRed)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcMaroonRed));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcCherryRed)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcCherryRed));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcCoralRed)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcCoralRed));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcMahogany)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcMahogany));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcblack));
       result = result.copyWith(backgroundColor: textColor);
     }
 
-    if (style.contains(NotusAttribute.bcOrange)) {
+    if (style.contains(NotusAttribute.bcred)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcOrange));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcred));
       result = result.copyWith(backgroundColor: textColor);
     }
 
-    if (style.contains(NotusAttribute.bcYellow)) {
+    if (style.contains(NotusAttribute.bcorange)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcYellow));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcNeonYellow)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcNeonYellow));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcForestGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcForestGreen));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcAppleGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcAppleGreen));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcTeaGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcTeaGreen));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcNeonGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcNeonGreen));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcTealGreen)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcTealGreen));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcorange));
       result = result.copyWith(backgroundColor: textColor);
     }
 
-    if (style.contains(NotusAttribute.bcLBlue)) {
+    if (style.contains(NotusAttribute.bcyellow)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcLBlue));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcOceanBlue)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcOceanBlue));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcLilBlue)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcLilBlue));
-      result = result.copyWith(backgroundColor: textColor);
-    }
-    if (style.contains(NotusAttribute.bcNavyBlue)) {
-      final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcNavyBlue));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcyellow));
       result = result.copyWith(backgroundColor: textColor);
     }
 
-    if (style.contains(NotusAttribute.bcPlum)) {
+    if (style.contains(NotusAttribute.bcgreen)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcPlum));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcgreen));
       result = result.copyWith(backgroundColor: textColor);
     }
-    if (style.contains(NotusAttribute.bcNeonPurple)) {
+
+    if (style.contains(NotusAttribute.bcblue)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcNeonPurple));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcblue));
       result = result.copyWith(backgroundColor: textColor);
     }
-    if (style.contains(NotusAttribute.bcSuedePurple)) {
+
+    if (style.contains(NotusAttribute.bcpurple)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcSuedePurple));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcpurple));
       result = result.copyWith(backgroundColor: textColor);
     }
-    if (style.contains(NotusAttribute.bcOrchidPurple)) {
+
+    if (style.contains(NotusAttribute.bcwhite)) {
       final textColor =
-          hexStringToColor(style.value<String>(NotusAttribute.bcOrchidPurple));
+          rgbStringToColor(style.value<String>(NotusAttribute.bcwhite));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcpink)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcpink));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcmagnolia)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcmagnolia));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bccream)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bccream));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcmint)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcmint));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bceggshell)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bceggshell));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcmauve)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcmauve));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bclightGrey)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bclightGrey));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcrosy)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcrosy));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcamber)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcamber));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bccanary)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bccanary));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcregent)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcregent));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bceuston)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bceuston));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcpremier)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcpremier));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcmidGrey)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcmidGrey));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcmaroon)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcmaroon));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcmustard)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcmustard));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcsick)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcsick));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcsnooker)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcsnooker));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bceverton)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bceverton));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bclenny)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bclenny));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bccharcoal)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bccharcoal));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcbudget)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcbudget));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcbrown)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcbrown));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcbean)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcbean));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcaftereight)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcaftereight));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcocean)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcocean));
+      result = result.copyWith(backgroundColor: textColor);
+    }
+
+    if (style.contains(NotusAttribute.bcbruise)) {
+      final textColor =
+          rgbStringToColor(style.value<String>(NotusAttribute.bcbruise));
       result = result.copyWith(backgroundColor: textColor);
     }
 

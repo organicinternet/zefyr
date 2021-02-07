@@ -113,65 +113,78 @@ class NotusAttribute<T> implements NotusAttributeBuilder<T> {
   static const backgroundColor = BackgroundColorAttributeBuilder._();
 
   /// Aliases for [NotusAttribute.color.<color_foo>].
-  static NotusAttribute<String> get cPink => color.pink;
-  static NotusAttribute<String> get cNeonPink => color.neonPink;
-  static NotusAttribute<String> get cMaroonRed => color.maroonRed;
-  static NotusAttribute<String> get cCherryRed => color.cherryRed;
-  static NotusAttribute<String> get cCoralRed => color.coralRed;
-  static NotusAttribute<String> get cMahogany => color.mahogany;
-
-  static NotusAttribute<String> get cOrange => color.orange;
-
-  static NotusAttribute<String> get cYellow => color.yellow;
-  static NotusAttribute<String> get cNeonYellow => color.neonYellow;
-
-  static NotusAttribute<String> get cForestGreen => color.forestGreen;
-  static NotusAttribute<String> get cAppleGreen => color.appleGreen;
-  static NotusAttribute<String> get cTeaGreen => color.teaGreen;
-  static NotusAttribute<String> get cNeonGreen => color.neonGreen;
-  static NotusAttribute<String> get cTealGreen => color.tealGreen;
-
-  static NotusAttribute<String> get cLBlue => color.lightBlue;
-  static NotusAttribute<String> get cOceanBlue => color.oceanBlue;
-  static NotusAttribute<String> get cLilBlue => color.lilBlue;
-  static NotusAttribute<String> get cNavyBlue => color.navyBlue;
-
-  static NotusAttribute<String> get cPlum => color.plum;
-  static NotusAttribute<String> get cNeonPurple => color.neonPurple;
-  static NotusAttribute<String> get cSuedePurple => color.suedePurple;
-  static NotusAttribute<String> get cOrchidPurple => color.orchidPurple;
+  static NotusAttribute<String> get black => color.black;
+  static NotusAttribute<String> get red => color.red;
+  static NotusAttribute<String> get orange => color.orange;
+  static NotusAttribute<String> get yellow => color.yellow;
+  static NotusAttribute<String> get green => color.green;
+  static NotusAttribute<String> get blue => color.blue;
+  static NotusAttribute<String> get purple => color.purple;
+  static NotusAttribute<String> get white => color.white;
+  static NotusAttribute<String> get pink => color.pink;
+  static NotusAttribute<String> get magnolia => color.magnolia;
+  static NotusAttribute<String> get cream => color.cream;
+  static NotusAttribute<String> get mint => color.mint;
+  static NotusAttribute<String> get eggshell => color.eggshell;
+  static NotusAttribute<String> get mauve => color.mauve;
+  static NotusAttribute<String> get lightGrey => color.lightGrey;
+  static NotusAttribute<String> get rosy => color.rosy;
+  static NotusAttribute<String> get amber => color.amber;
+  static NotusAttribute<String> get canary => color.canary;
+  static NotusAttribute<String> get regent => color.regent;
+  static NotusAttribute<String> get euston => color.euston;
+  static NotusAttribute<String> get premier => color.premier;
+  static NotusAttribute<String> get midGrey => color.midGrey;
+  static NotusAttribute<String> get maroon => color.maroon;
+  static NotusAttribute<String> get mustard => color.mustard;
+  static NotusAttribute<String> get sick => color.sick;
+  static NotusAttribute<String> get snooker => color.snooker;
+  static NotusAttribute<String> get everton => color.everton;
+  static NotusAttribute<String> get lenny => color.lenny;
+  static NotusAttribute<String> get charcoal => color.charcoal;
+  static NotusAttribute<String> get budget => color.budget;
+  static NotusAttribute<String> get brown => color.brown;
+  static NotusAttribute<String> get bean => color.bean;
+  static NotusAttribute<String> get aftereight => color.aftereight;
+  static NotusAttribute<String> get ocean => color.ocean;
+  static NotusAttribute<String> get bruise => color.bruise;
 
   /// Aliases for [NotusAttribute.backgroundColor.<color_foo>].
-  static NotusAttribute<String> get bcPink => backgroundColor.pink;
-  static NotusAttribute<String> get bcNeonPink => backgroundColor.neonPink;
-  static NotusAttribute<String> get bcMaroonRed => backgroundColor.maroonRed;
-  static NotusAttribute<String> get bcCherryRed => backgroundColor.cherryRed;
-  static NotusAttribute<String> get bcCoralRed => backgroundColor.coralRed;
-  static NotusAttribute<String> get bcMahogany => backgroundColor.mahogany;
-
-  static NotusAttribute<String> get bcOrange => backgroundColor.orange;
-
-  static NotusAttribute<String> get bcYellow => backgroundColor.yellow;
-  static NotusAttribute<String> get bcNeonYellow => backgroundColor.neonYellow;
-
-  static NotusAttribute<String> get bcForestGreen =>
-      backgroundColor.forestGreen;
-  static NotusAttribute<String> get bcAppleGreen => backgroundColor.appleGreen;
-  static NotusAttribute<String> get bcTeaGreen => backgroundColor.teaGreen;
-  static NotusAttribute<String> get bcNeonGreen => backgroundColor.neonGreen;
-  static NotusAttribute<String> get bcTealGreen => backgroundColor.tealGreen;
-
-  static NotusAttribute<String> get bcLBlue => backgroundColor.lightBlue;
-  static NotusAttribute<String> get bcOceanBlue => backgroundColor.oceanBlue;
-  static NotusAttribute<String> get bcLilBlue => backgroundColor.lilBlue;
-  static NotusAttribute<String> get bcNavyBlue => backgroundColor.navyBlue;
-
-  static NotusAttribute<String> get bcPlum => backgroundColor.plum;
-  static NotusAttribute<String> get bcNeonPurple => backgroundColor.neonPurple;
-  static NotusAttribute<String> get bcSuedePurple =>
-      backgroundColor.suedePurple;
-  static NotusAttribute<String> get bcOrchidPurple =>
-      backgroundColor.orchidPurple;
+  static NotusAttribute<String> get bcblack => backgroundColor.black;
+  static NotusAttribute<String> get bcred => backgroundColor.red;
+  static NotusAttribute<String> get bcorange => backgroundColor.orange;
+  static NotusAttribute<String> get bcyellow => backgroundColor.yellow;
+  static NotusAttribute<String> get bcgreen => backgroundColor.green;
+  static NotusAttribute<String> get bcblue => backgroundColor.blue;
+  static NotusAttribute<String> get bcpurple => backgroundColor.purple;
+  static NotusAttribute<String> get bcwhite => backgroundColor.white;
+  static NotusAttribute<String> get bcpink => backgroundColor.pink;
+  static NotusAttribute<String> get bcmagnolia => backgroundColor.magnolia;
+  static NotusAttribute<String> get bccream => backgroundColor.cream;
+  static NotusAttribute<String> get bcmint => backgroundColor.mint;
+  static NotusAttribute<String> get bceggshell => backgroundColor.eggshell;
+  static NotusAttribute<String> get bcmauve => backgroundColor.mauve;
+  static NotusAttribute<String> get bclightGrey => backgroundColor.lightGrey;
+  static NotusAttribute<String> get bcrosy => backgroundColor.rosy;
+  static NotusAttribute<String> get bcamber => backgroundColor.amber;
+  static NotusAttribute<String> get bccanary => backgroundColor.canary;
+  static NotusAttribute<String> get bcregent => backgroundColor.regent;
+  static NotusAttribute<String> get bceuston => backgroundColor.euston;
+  static NotusAttribute<String> get bcpremier => backgroundColor.premier;
+  static NotusAttribute<String> get bcmidGrey => backgroundColor.midGrey;
+  static NotusAttribute<String> get bcmaroon => backgroundColor.maroon;
+  static NotusAttribute<String> get bcmustard => backgroundColor.mustard;
+  static NotusAttribute<String> get bcsick => backgroundColor.sick;
+  static NotusAttribute<String> get bcsnooker => backgroundColor.snooker;
+  static NotusAttribute<String> get bceverton => backgroundColor.everton;
+  static NotusAttribute<String> get bclenny => backgroundColor.lenny;
+  static NotusAttribute<String> get bccharcoal => backgroundColor.charcoal;
+  static NotusAttribute<String> get bcbudget => backgroundColor.budget;
+  static NotusAttribute<String> get bcbrown => backgroundColor.brown;
+  static NotusAttribute<String> get bcbean => backgroundColor.bean;
+  static NotusAttribute<String> get bcaftereight => backgroundColor.aftereight;
+  static NotusAttribute<String> get bcocean => backgroundColor.ocean;
+  static NotusAttribute<String> get bcbruise => backgroundColor.bruise;
 
   /// Link style attribute.
   // ignore: const_eval_throws_exception
@@ -462,55 +475,76 @@ class ColorAttributeBuilder extends NotusAttributeBuilder<String> {
   const ColorAttributeBuilder._()
       : super._(_kColor, NotusAttributeScope.inline);
 
-  NotusAttribute<String> get pink =>
-      NotusAttribute<String>._(key, scope, "ffbcbc");
-  NotusAttribute<String> get neonPink =>
-      NotusAttribute<String>._(key, scope, "ff3796");
-  NotusAttribute<String> get maroonRed =>
-      NotusAttribute<String>._(key, scope, "751011");
-  NotusAttribute<String> get cherryRed =>
-      NotusAttribute<String>._(key, scope, "e43f5a");
-  NotusAttribute<String> get coralRed =>
-      NotusAttribute<String>._(key, scope, "f47c7c");
-  NotusAttribute<String> get mahogany =>
-      NotusAttribute<String>._(key, scope, "B64003");
-
+  NotusAttribute<String> get black =>
+      NotusAttribute<String>._(key, scope, "rgb(0 , 0, 0)");
+  NotusAttribute<String> get red =>
+      NotusAttribute<String>._(key, scope, "rgb(230, 0, 0)");
   NotusAttribute<String> get orange =>
-      NotusAttribute<String>._(key, scope, "FE8C03");
-
+      NotusAttribute<String>._(key, scope, "rgb(255, 153, 0)");
   NotusAttribute<String> get yellow =>
-      NotusAttribute<String>._(key, scope, "f7f48b");
-  NotusAttribute<String> get neonYellow =>
-      NotusAttribute<String>._(key, scope, "fdff38");
-
-  NotusAttribute<String> get forestGreen =>
-      NotusAttribute<String>._(key, scope, "004a18");
-  NotusAttribute<String> get appleGreen =>
-      NotusAttribute<String>._(key, scope, "a1de93");
-  NotusAttribute<String> get teaGreen =>
-      NotusAttribute<String>._(key, scope, "acecd5");
-  NotusAttribute<String> get neonGreen =>
-      NotusAttribute<String>._(key, scope, "00faac");
-  NotusAttribute<String> get tealGreen =>
-      NotusAttribute<String>._(key, scope, "048481");
-
-  NotusAttribute<String> get lightBlue =>
-      NotusAttribute<String>._(key, scope, "beebe9");
-  NotusAttribute<String> get oceanBlue =>
-      NotusAttribute<String>._(key, scope, "2ECFFF");
-  NotusAttribute<String> get lilBlue =>
-      NotusAttribute<String>._(key, scope, "70a1d7");
-  NotusAttribute<String> get navyBlue =>
-      NotusAttribute<String>._(key, scope, "162447");
-
-  NotusAttribute<String> get plum =>
-      NotusAttribute<String>._(key, scope, "d7aefc");
-  NotusAttribute<String> get neonPurple =>
-      NotusAttribute<String>._(key, scope, "dc2ade");
-  NotusAttribute<String> get suedePurple =>
-      NotusAttribute<String>._(key, scope, "834c69");
-  NotusAttribute<String> get orchidPurple =>
-      NotusAttribute<String>._(key, scope, "543864");
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 0)");
+  NotusAttribute<String> get green =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 138, 0)");
+  NotusAttribute<String> get blue =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 102, 204)");
+  NotusAttribute<String> get purple =>
+      NotusAttribute<String>._(key, scope, "rgb(153, 51, 255)");
+  NotusAttribute<String> get white =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 255)");
+  NotusAttribute<String> get pink =>
+      NotusAttribute<String>._(key, scope, "rgb(250, 204, 204)");
+  NotusAttribute<String> get magnolia =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 235, 204)");
+  NotusAttribute<String> get cream =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 204)");
+  NotusAttribute<String> get mint =>
+      NotusAttribute<String>._(key, scope, "rgb(204, 232, 204)");
+  NotusAttribute<String> get eggshell =>
+      NotusAttribute<String>._(key, scope, "rgb(204, 224, 245)");
+  NotusAttribute<String> get mauve =>
+      NotusAttribute<String>._(key, scope, "rgb(235, 214, 255)");
+  NotusAttribute<String> get lightGrey =>
+      NotusAttribute<String>._(key, scope, "rgb(187, 187, 187)");
+  NotusAttribute<String> get rosy =>
+      NotusAttribute<String>._(key, scope, "rgb(240, 102, 102)");
+  NotusAttribute<String> get amber =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 194, 102)");
+  NotusAttribute<String> get canary =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 102)");
+  NotusAttribute<String> get regent =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 185, 102)");
+  NotusAttribute<String> get euston =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 163, 224)");
+  NotusAttribute<String> get premier =>
+      NotusAttribute<String>._(key, scope, "rgb(194, 133, 255)");
+  NotusAttribute<String> get midGrey =>
+      NotusAttribute<String>._(key, scope, "rgb(136, 136, 136)");
+  NotusAttribute<String> get maroon =>
+      NotusAttribute<String>._(key, scope, "rgb(161, 0, 0)");
+  NotusAttribute<String> get mustard =>
+      NotusAttribute<String>._(key, scope, "rgb(178, 107, 0)");
+  NotusAttribute<String> get sick =>
+      NotusAttribute<String>._(key, scope, "rgb(178, 178, 0)");
+  NotusAttribute<String> get snooker =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 97, 0)");
+  NotusAttribute<String> get everton =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 71, 178)");
+  NotusAttribute<String> get lenny =>
+      NotusAttribute<String>._(key, scope, "rgb(107, 36, 178)");
+  NotusAttribute<String> get charcoal =>
+      NotusAttribute<String>._(key, scope, "rgb(68, 68, 68)");
+  NotusAttribute<String> get budget =>
+      NotusAttribute<String>._(key, scope, "rgb(92, 0, 0)");
+  NotusAttribute<String> get brown =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 61, 0)");
+  NotusAttribute<String> get bean =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 102, 0)");
+  NotusAttribute<String> get aftereight =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 55, 0)");
+  NotusAttribute<String> get ocean =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 41, 102)");
+  NotusAttribute<String> get bruise =>
+      NotusAttribute<String>._(key, scope, "rgb(61, 20, 102)");
 }
 
 /// Builder for color attribute styles.
@@ -519,55 +553,76 @@ class BackgroundColorAttributeBuilder extends NotusAttributeBuilder<String> {
   const BackgroundColorAttributeBuilder._()
       : super._(_kColor, NotusAttributeScope.inline);
 
-  NotusAttribute<String> get pink =>
-      NotusAttribute<String>._(key, scope, "ffbcbc");
-  NotusAttribute<String> get neonPink =>
-      NotusAttribute<String>._(key, scope, "ff3796");
-  NotusAttribute<String> get maroonRed =>
-      NotusAttribute<String>._(key, scope, "751011");
-  NotusAttribute<String> get cherryRed =>
-      NotusAttribute<String>._(key, scope, "e43f5a");
-  NotusAttribute<String> get coralRed =>
-      NotusAttribute<String>._(key, scope, "f47c7c");
-  NotusAttribute<String> get mahogany =>
-      NotusAttribute<String>._(key, scope, "B64003");
-
+  NotusAttribute<String> get black =>
+      NotusAttribute<String>._(key, scope, "rgb(0 , 0, 0)");
+  NotusAttribute<String> get red =>
+      NotusAttribute<String>._(key, scope, "rgb(230, 0, 0)");
   NotusAttribute<String> get orange =>
-      NotusAttribute<String>._(key, scope, "FE8C03");
-
+      NotusAttribute<String>._(key, scope, "rgb(255, 153, 0)");
   NotusAttribute<String> get yellow =>
-      NotusAttribute<String>._(key, scope, "f7f48b");
-  NotusAttribute<String> get neonYellow =>
-      NotusAttribute<String>._(key, scope, "fdff38");
-
-  NotusAttribute<String> get forestGreen =>
-      NotusAttribute<String>._(key, scope, "004a18");
-  NotusAttribute<String> get appleGreen =>
-      NotusAttribute<String>._(key, scope, "a1de93");
-  NotusAttribute<String> get teaGreen =>
-      NotusAttribute<String>._(key, scope, "acecd5");
-  NotusAttribute<String> get neonGreen =>
-      NotusAttribute<String>._(key, scope, "00faac");
-  NotusAttribute<String> get tealGreen =>
-      NotusAttribute<String>._(key, scope, "048481");
-
-  NotusAttribute<String> get lightBlue =>
-      NotusAttribute<String>._(key, scope, "beebe9");
-  NotusAttribute<String> get oceanBlue =>
-      NotusAttribute<String>._(key, scope, "2ECFFF");
-  NotusAttribute<String> get lilBlue =>
-      NotusAttribute<String>._(key, scope, "70a1d7");
-  NotusAttribute<String> get navyBlue =>
-      NotusAttribute<String>._(key, scope, "162447");
-
-  NotusAttribute<String> get plum =>
-      NotusAttribute<String>._(key, scope, "d7aefc");
-  NotusAttribute<String> get neonPurple =>
-      NotusAttribute<String>._(key, scope, "dc2ade");
-  NotusAttribute<String> get suedePurple =>
-      NotusAttribute<String>._(key, scope, "834c69");
-  NotusAttribute<String> get orchidPurple =>
-      NotusAttribute<String>._(key, scope, "543864");
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 0)");
+  NotusAttribute<String> get green =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 138, 0)");
+  NotusAttribute<String> get blue =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 102, 204)");
+  NotusAttribute<String> get purple =>
+      NotusAttribute<String>._(key, scope, "rgb(153, 51, 255)");
+  NotusAttribute<String> get white =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 255)");
+  NotusAttribute<String> get pink =>
+      NotusAttribute<String>._(key, scope, "rgb(250, 204, 204)");
+  NotusAttribute<String> get magnolia =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 235, 204)");
+  NotusAttribute<String> get cream =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 204)");
+  NotusAttribute<String> get mint =>
+      NotusAttribute<String>._(key, scope, "rgb(204, 232, 204)");
+  NotusAttribute<String> get eggshell =>
+      NotusAttribute<String>._(key, scope, "rgb(204, 224, 245)");
+  NotusAttribute<String> get mauve =>
+      NotusAttribute<String>._(key, scope, "rgb(235, 214, 255)");
+  NotusAttribute<String> get lightGrey =>
+      NotusAttribute<String>._(key, scope, "rgb(187, 187, 187)");
+  NotusAttribute<String> get rosy =>
+      NotusAttribute<String>._(key, scope, "rgb(240, 102, 102)");
+  NotusAttribute<String> get amber =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 194, 102)");
+  NotusAttribute<String> get canary =>
+      NotusAttribute<String>._(key, scope, "rgb(255, 255, 102)");
+  NotusAttribute<String> get regent =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 185, 102)");
+  NotusAttribute<String> get euston =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 163, 224)");
+  NotusAttribute<String> get premier =>
+      NotusAttribute<String>._(key, scope, "rgb(194, 133, 255)");
+  NotusAttribute<String> get midGrey =>
+      NotusAttribute<String>._(key, scope, "rgb(136, 136, 136)");
+  NotusAttribute<String> get maroon =>
+      NotusAttribute<String>._(key, scope, "rgb(161, 0, 0)");
+  NotusAttribute<String> get mustard =>
+      NotusAttribute<String>._(key, scope, "rgb(178, 107, 0)");
+  NotusAttribute<String> get sick =>
+      NotusAttribute<String>._(key, scope, "rgb(178, 178, 0)");
+  NotusAttribute<String> get snooker =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 97, 0)");
+  NotusAttribute<String> get everton =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 71, 178)");
+  NotusAttribute<String> get lenny =>
+      NotusAttribute<String>._(key, scope, "rgb(107, 36, 178)");
+  NotusAttribute<String> get charcoal =>
+      NotusAttribute<String>._(key, scope, "rgb(68, 68, 68)");
+  NotusAttribute<String> get budget =>
+      NotusAttribute<String>._(key, scope, "rgb(92, 0, 0)");
+  NotusAttribute<String> get brown =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 61, 0)");
+  NotusAttribute<String> get bean =>
+      NotusAttribute<String>._(key, scope, "rgb(102, 102, 0)");
+  NotusAttribute<String> get aftereight =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 55, 0)");
+  NotusAttribute<String> get ocean =>
+      NotusAttribute<String>._(key, scope, "rgb(0, 41, 102)");
+  NotusAttribute<String> get bruise =>
+      NotusAttribute<String>._(key, scope, "rgb(61, 20, 102)");
 }
 
 /// Builder for link attribute values.

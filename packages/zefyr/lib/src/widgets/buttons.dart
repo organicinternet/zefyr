@@ -436,33 +436,80 @@ class _ModeColorButtonState extends State<ModeColorButton> {
     final toolbar = ZefyrToolbar.of(context);
     List<Widget> darkModeColors = [
       SizedBox(width: 8.0),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorPink),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorNeonPink),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorCherryRed),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorCoralRed),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorOrange),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorYellow),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorNeonYellow),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorAppleGreen),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorTeaGreen),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorNeonGreen),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorLightBlue),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorOceanBlue),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorLilBlue),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorPlum),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorNeonPurple),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_black),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_red),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_orange),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_yellow),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_green),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_blue),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_purple),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_white),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_pink),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_magnolia),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_cream),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_mint),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_eggshell),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_mauve),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_lightGrey),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_rosy),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_amber),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_canary),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_regent),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_euston),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_premier),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_midGrey),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_maroon),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_mustard),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_sick),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_snooker),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_everton),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_lenny),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_charcoal),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_budget),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_brown),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_bean),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_aftereight),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_ocean),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_bruise),
     ];
 
     List<Widget> lightModeColors = [
       SizedBox(width: 8.0),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorMaroonRed),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorCherryRed),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorMahogany),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorForestGreen),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorTealGreen),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorNavyBlue),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorSuedePurple),
-      toolbar.buildButton(context, ZefyrToolbarAction.colorOrchidPurple),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_black),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_red),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_orange),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_yellow),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_green),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_blue),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_purple),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_white),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_pink),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_magnolia),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_cream),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_mint),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_eggshell),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_mauve),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_lightGrey),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_rosy),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_amber),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_canary),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_regent),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_euston),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_premier),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_midGrey),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_maroon),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_mustard),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_sick),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_snooker),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_everton),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_lenny),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_charcoal),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_budget),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_brown),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_bean),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_aftereight),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_ocean),
+      toolbar.buildButton(context, ZefyrToolbarAction.color_bruise),
     ];
     return ZefyrToolbarScaffold(
         body: ZefyrButtonList(
@@ -505,21 +552,74 @@ class _BackgroundColorButtonState extends State<BackgroundColorButton> {
         buttons: [
           SizedBox(width: 8.0),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorMaroonRed),
+              context, ZefyrToolbarAction.background_color_black),
+          toolbar.buildButton(context, ZefyrToolbarAction.background_color_red),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorCherryRed),
+              context, ZefyrToolbarAction.background_color_orange),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorMahogany),
+              context, ZefyrToolbarAction.background_color_yellow),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorForestGreen),
+              context, ZefyrToolbarAction.background_color_green),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorTealGreen),
+              context, ZefyrToolbarAction.background_color_blue),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorNavyBlue),
+              context, ZefyrToolbarAction.background_color_purple),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorSuedePurple),
+              context, ZefyrToolbarAction.background_color_white),
           toolbar.buildButton(
-              context, ZefyrToolbarAction.backgroundColorOrchidPurple),
+              context, ZefyrToolbarAction.background_color_pink),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_magnolia),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_cream),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_mint),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_eggshell),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_mauve),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_lightGrey),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_rosy),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_amber),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_canary),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_regent),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_euston),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_premier),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_midGrey),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_maroon),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_mustard),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_sick),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_snooker),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_everton),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_lenny),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_charcoal),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_budget),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_brown),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_bean),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_aftereight),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_ocean),
+          toolbar.buildButton(
+              context, ZefyrToolbarAction.background_color_bruise),
         ],
       ),
     );
