@@ -206,8 +206,9 @@ class RawZefyrButton extends StatelessWidget {
         minWidth: width, maxHeight: theme.buttonTheme.constraints.minHeight);
     final radius = BorderRadius.all(Radius.circular(3.0));
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 1.0, vertical: 6.0),
+      padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 6.0),
       child: RawMaterialButton(
+        padding: EdgeInsets.symmetric(horizontal: 8.0),
         shape: RoundedRectangleBorder(borderRadius: radius),
         elevation: 0.0,
         fillColor: color,

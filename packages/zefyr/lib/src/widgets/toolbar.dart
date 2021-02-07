@@ -567,6 +567,14 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
     ZefyrToolbarAction.headingLevel1: 'H1',
     ZefyrToolbarAction.headingLevel2: 'H2',
     ZefyrToolbarAction.headingLevel3: 'H3',
+    ZefyrToolbarAction.screedStyleLightHeading1: 'Light H1',
+    ZefyrToolbarAction.screedStyleLightHeading2: 'Light H2',
+    ZefyrToolbarAction.screedStyleLightHeading3: 'Light H3',
+    ZefyrToolbarAction.screedStyleBody1: 'Body 1',
+    ZefyrToolbarAction.screedStyleBody2: 'Body 2',
+    ZefyrToolbarAction.screedStyleBody3: 'Body 3',
+    ZefyrToolbarAction.screedStyleBody4: 'Body 4',
+    ZefyrToolbarAction.screedStyleListed: 'Listed',
     ZefyrToolbarAction.fontQl1: '16px',
     ZefyrToolbarAction.fontQl2: '18px',
     ZefyrToolbarAction.fontQl3: '20px',
@@ -640,7 +648,6 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
       );
     } else if (kDefaultButtonTexts.containsKey(action)) {
       final text = kDefaultButtonTexts[action];
-      print(action);
       assert(text != null);
       final style = theme.textTheme.caption
           .copyWith(fontWeight: FontWeight.bold, fontSize: 14.0);
@@ -650,7 +657,7 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
         style: style,
         onPressed: onPressed,
       );
-    } else {
+    } else if (kColorCircles.containsKey(action)) {
       final color = kColorCircles[action];
       assert(color != null);
       return ZefyrButton.widget(
@@ -664,6 +671,8 @@ class _DefaultZefyrToolbarDelegate implements ZefyrToolbarDelegate {
             )),
         onPressed: onPressed,
       );
+    } else {
+      return Container();
     }
   }
 }
