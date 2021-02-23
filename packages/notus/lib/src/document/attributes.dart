@@ -674,7 +674,7 @@ class ParagraphAttributeBuilder extends NotusAttributeBuilder<String> {
   NotusAttribute<String> get body1 =>
       NotusAttribute<String>._(key, scope, "body-one");
   NotusAttribute<String> get body2 =>
-      NotusAttribute<String>._(key, scope, null); // body-two is default
+      NotusAttribute<String>._(key, scope, "body-two"); // body-two is default
   NotusAttribute<String> get body3 =>
       NotusAttribute<String>._(key, scope, "body-three");
   NotusAttribute<String> get body4 =>

@@ -32,22 +32,19 @@ class ZefyrParagraph extends StatelessWidget {
       if (node.style.get(NotusAttribute.p) == NotusAttribute.p.body1) {
         style = style.merge(theme.attributeTheme.screedStyleBody1.textStyle);
         padding = theme.attributeTheme.screedStyleBody1.padding;
-      }
-      if (node.style.get(NotusAttribute.p) == NotusAttribute.p.body2) {
-        style = style.merge(theme.attributeTheme.screedStyleBody2.textStyle);
-        padding = theme.attributeTheme.screedStyleBody2.padding;
-      }
-      if (node.style.get(NotusAttribute.p) == NotusAttribute.p.body3) {
+      } else if (node.style.get(NotusAttribute.p) == NotusAttribute.p.body3) {
         style = style.merge(theme.attributeTheme.screedStyleBody3.textStyle);
         padding = theme.attributeTheme.screedStyleBody3.padding;
-      }
-      if (node.style.get(NotusAttribute.p) == NotusAttribute.p.body4) {
+      } else if (node.style.get(NotusAttribute.p) == NotusAttribute.p.body4) {
         style = style.merge(theme.attributeTheme.screedStyleBody4.textStyle);
         padding = theme.attributeTheme.screedStyleBody4.padding;
-      }
-      if (node.style.get(NotusAttribute.p) == NotusAttribute.p.listed) {
+      } else if (node.style.get(NotusAttribute.p) == NotusAttribute.p.listed) {
         style = style.merge(theme.attributeTheme.screedStyleListed.textStyle);
         padding = theme.attributeTheme.screedStyleListed.padding;
+      } else {
+        // body-two
+        style = style.merge(theme.attributeTheme.screedStyleBody2.textStyle);
+        padding = theme.attributeTheme.screedStyleBody2.padding;
       }
       if (node.style.get(NotusAttribute.alignment) ==
           NotusAttribute.alignment.center) {

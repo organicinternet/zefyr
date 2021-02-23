@@ -14,6 +14,7 @@ dependencies:
   url_launcher: ^5.0.0
   quill_delta: ^1.0.0
   notus:
+    # path: ../notus
     git:
       url: git://github.com/organicinternet/zefyr.git
       path: packages/notus/
