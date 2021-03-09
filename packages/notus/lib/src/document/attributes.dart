@@ -669,7 +669,7 @@ class HeadingAttributeBuilder extends NotusAttributeBuilder<int> {
 class ParagraphAttributeBuilder extends NotusAttributeBuilder<String> {
   static const _kTag = 'p';
   const ParagraphAttributeBuilder._()
-      : super._(_kTag, NotusAttributeScope.inline);
+      : super._(_kTag, NotusAttributeScope.line);
 
   NotusAttribute<String> get body1 =>
       NotusAttribute<String>._(key, scope, "body-one");
