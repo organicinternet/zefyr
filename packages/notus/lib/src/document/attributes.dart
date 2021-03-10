@@ -476,7 +476,7 @@ class ColorAttributeBuilder extends NotusAttributeBuilder<String> {
       : super._(_kColor, NotusAttributeScope.inline);
 
   NotusAttribute<String> get black =>
-      NotusAttribute<String>._(key, scope, "rgb(0 , 0, 0)");
+      NotusAttribute<String>._(key, scope, "rgb(0, 0, 0)");
   NotusAttribute<String> get red =>
       NotusAttribute<String>._(key, scope, "rgb(230, 0, 0)");
   NotusAttribute<String> get orange =>
@@ -554,7 +554,7 @@ class BackgroundColorAttributeBuilder extends NotusAttributeBuilder<String> {
       : super._(_kColor, NotusAttributeScope.inline);
 
   NotusAttribute<String> get black =>
-      NotusAttribute<String>._(key, scope, "rgb(0 , 0, 0)");
+      NotusAttribute<String>._(key, scope, "rgb(0, 0, 0)");
   NotusAttribute<String> get red =>
       NotusAttribute<String>._(key, scope, "rgb(230, 0, 0)");
   NotusAttribute<String> get orange =>
